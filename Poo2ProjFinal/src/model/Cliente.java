@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.Date;
+
 
 public class Cliente {
     
@@ -13,7 +15,7 @@ public class Cliente {
     private String email;
     private String senha;
     private String cpf;
-    private date dataNascimento;
+    private Date dataNascimento;
 
     public int getPkCliente() {
         return pkCliente;
@@ -55,11 +57,11 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public date getDataNascimento() {
+    public Date getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(date dataNascimento) {
+    public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
     
