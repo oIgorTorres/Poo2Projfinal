@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.LoginController;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,13 +14,11 @@ import javax.swing.JOptionPane;
  */
 public class frLogin extends javax.swing.JFrame {
 
-   
     public frLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -68,6 +67,11 @@ public class frLogin extends javax.swing.JFrame {
 
         btnLogar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnLogar.setText("Logar");
+        btnLogar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLogarMouseClicked(evt);
+            }
+        });
 
         jPanel3.setBackground(new java.awt.Color(41, 89, 134));
 
@@ -160,8 +164,12 @@ public class frLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_edtSenhaActionPerformed
 
+    private void btnLogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogarMouseClicked
+        logar();
+    }//GEN-LAST:event_btnLogarMouseClicked
+
     //Verifica se os campos estão preenchidos
-     private boolean verificarCampos() {
+    private boolean verificarCampos() {
         if (edtEmail.getText().isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Usuario em branco");
             return false;
@@ -172,8 +180,32 @@ public class frLogin extends javax.swing.JFrame {
         }
         return true;
     }
-    
-  
+
+    private void logar() {
+
+        if (!verificarCampos()) {
+            return;
+        }
+        //Ler os campos
+        String usuario = edtEmail.getText();
+        String senha = new String(edtSenha.getPassword());
+
+        //Guardar os dados
+        //Consultar no banco de dados
+        LoginController controller = new LoginController();
+
+        if (controller.autenticar(usuario, senha)) {
+            //Entra no sistema
+            frMenu telaMenu = new frMenu();
+            telaMenu.setVisible(true);
+            this.setVisible(false);
+        } else {
+            //Mensagem de usuário não encontrado
+            JOptionPane.showMessageDialog(rootPane, "Usuário não encontrado");
+        }
+        //Verificar se tem ou não aquele usuário
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

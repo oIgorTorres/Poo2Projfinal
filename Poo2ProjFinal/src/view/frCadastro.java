@@ -5,6 +5,7 @@
  */
 package view;
 
+import controller.CadastroController;
 import javax.swing.JOptionPane;
 import model.Usuario;
 import util.Utils;
@@ -43,7 +44,7 @@ public class frCadastro extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        btnLimpar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         btnCadastrar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -113,9 +114,19 @@ public class frCadastro extends javax.swing.JDialog {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Data Nascimento");
 
-        btnLimpar.setText("Limpar");
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCancelarMouseClicked(evt);
+            }
+        });
 
         btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCadastrarMouseClicked(evt);
+            }
+        });
 
         jPanel3.setBackground(new java.awt.Color(41, 89, 134));
 
@@ -154,7 +165,7 @@ public class frCadastro extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(edtData, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnLimpar)
+                        .addComponent(btnCancelar)
                         .addGap(40, 40, 40)
                         .addComponent(btnCadastrar))
                     .addComponent(jLabel4)
@@ -195,7 +206,7 @@ public class frCadastro extends javax.swing.JDialog {
                 .addComponent(edtData, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLimpar)
+                    .addComponent(btnCancelar)
                     .addComponent(btnCadastrar))
                 .addGap(37, 37, 37)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -222,6 +233,14 @@ public class frCadastro extends javax.swing.JDialog {
     private void edtDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtDataActionPerformed
+
+    private void btnCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarMouseClicked
+        gravar();
+    }//GEN-LAST:event_btnCadastrarMouseClicked
+
+    private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
+        dispose();
+    }//GEN-LAST:event_btnCancelarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -322,12 +341,18 @@ public class frCadastro extends javax.swing.JDialog {
         usu.setSenha(Utils.calcularHash(new String(edtCadSenha.getPassword())));
         usu.setDataNascimento(Utils.converterStringToDate(edtData.getText()));
 
+     //enviar para o banco de dados
+        CadastroController controller = new CadastroController();
+        if(controller.inserir(usu)){
+            JOptionPane.showMessageDialog(null, "Usuario inserido");
+            this.dispose();
+        }
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JTextField edtCadEmail;
     private javax.swing.JTextField edtCadNome;
     private javax.swing.JPasswordField edtCadSenha;
