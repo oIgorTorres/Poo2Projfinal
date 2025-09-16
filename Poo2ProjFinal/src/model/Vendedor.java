@@ -11,14 +11,23 @@ import java.util.Date;
  *
  * @author aluno.saolucas
  */
-public class Usuario {
+public class Vendedor {
 
     private int pkUsuario;
     private String nome;
     private String email;
     private String senha;
     private Date dataNascimento;
+    private String cpf;
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    
     public int getPkUsuario() {
         return pkUsuario;
     }
