@@ -21,7 +21,7 @@ import model.Vendedor;
 
 public class VendedorController {
     
-    public boolean cadastroVendedor(Usua) {
+    public boolean cadastroVendedor(Vendedor usu) {
         String sql = "INSERT INTO VENDEDOR (nome, email, senha, cpf)"
                 + "Values (?, ?, ?, ?)";
 
@@ -36,7 +36,7 @@ public class VendedorController {
             comando.setString(1, usu.getNome());
             comando.setString(2, usu.getEmail());
             comando.setString(3, usu.getSenha());
-            comando.setString(3, usu.getCpf());
+            comando.setString(4, usu.getCpf());
            
 
             comando.executeUpdate();
