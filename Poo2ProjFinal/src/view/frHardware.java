@@ -169,14 +169,17 @@ public class frHardware extends javax.swing.JFrame {
         pnlPrincipal.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("R$ ----");
         pnlPrincipal.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("R$ ----");
         pnlPrincipal.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("R$ ----");
         pnlPrincipal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, -1, -1));
 
