@@ -5,7 +5,7 @@
  */
 package view;
 
-import controller.CadastroController;
+import controller.VendedorController;
 import javax.swing.JOptionPane;
 import model.Vendedor;
 import util.Utils;
@@ -36,7 +36,7 @@ public class frCadastro extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        edtCadNome = new javax.swing.JTextField();
+        edtCadCpf = new javax.swing.JTextField();
         edtCadEmail = new javax.swing.JTextField();
         edtData = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -48,10 +48,10 @@ public class frCadastro extends javax.swing.JDialog {
         btnCadastrar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        edtCadSenha = new javax.swing.JPasswordField();
         edtConSenha = new javax.swing.JPasswordField();
-        edtCadSenha1 = new javax.swing.JPasswordField();
+        edtCadSenha = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
+        edtCadNome1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -70,9 +70,9 @@ public class frCadastro extends javax.swing.JDialog {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(145, Short.MAX_VALUE)
+                .addContainerGap(137, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addGap(117, 117, 117))
+                .addGap(125, 125, 125))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,23 +84,23 @@ public class frCadastro extends javax.swing.JDialog {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, -1));
 
-        edtCadNome.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        edtCadNome.addActionListener(new java.awt.event.ActionListener() {
+        edtCadCpf.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        edtCadCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtCadNomeActionPerformed(evt);
+                edtCadCpfActionPerformed(evt);
             }
         });
-        jPanel1.add(edtCadNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 183, 27));
+        jPanel1.add(edtCadCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 183, 27));
 
         edtCadEmail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jPanel1.add(edtCadEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 182, 27));
+        jPanel1.add(edtCadEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 182, 27));
 
         edtData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edtDataActionPerformed(evt);
             }
         });
-        jPanel1.add(edtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 141, 27));
+        jPanel1.add(edtData, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 141, 27));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -110,7 +110,7 @@ public class frCadastro extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("E-mail");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -120,12 +120,12 @@ public class frCadastro extends javax.swing.JDialog {
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Confirmar Senha");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Data Nascimento");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, -1, -1));
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,7 +133,7 @@ public class frCadastro extends javax.swing.JDialog {
                 btnCancelarMouseClicked(evt);
             }
         });
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
 
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -141,7 +141,7 @@ public class frCadastro extends javax.swing.JDialog {
                 btnCadastrarMouseClicked(evt);
             }
         });
-        jPanel1.add(btnCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, -1, -1));
+        jPanel1.add(btnCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(41, 89, 134));
 
@@ -166,15 +166,22 @@ public class frCadastro extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 420, -1));
-        jPanel1.add(edtCadSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 183, 27));
-        jPanel1.add(edtConSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 182, 27));
-        jPanel1.add(edtCadSenha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 183, 27));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 420, -1));
+        jPanel1.add(edtConSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 182, 27));
+        jPanel1.add(edtCadSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 183, 27));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Cpf");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+
+        edtCadNome1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        edtCadNome1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edtCadNome1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(edtCadNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 183, 27));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -190,9 +197,9 @@ public class frCadastro extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void edtCadNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCadNomeActionPerformed
+    private void edtCadCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCadCpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtCadNomeActionPerformed
+    }//GEN-LAST:event_edtCadCpfActionPerformed
 
     private void edtDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtDataActionPerformed
         // TODO add your handling code here:
@@ -205,6 +212,10 @@ public class frCadastro extends javax.swing.JDialog {
     private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
         dispose();
     }//GEN-LAST:event_btnCancelarMouseClicked
+
+    private void edtCadNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCadNome1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtCadNome1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,7 +260,7 @@ public class frCadastro extends javax.swing.JDialog {
     }
 
     private boolean verificarCampos() {
-        if (edtCadNome.getText().isEmpty()) {
+        if (edtCadCpf.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Campo 'nome' em branco");
             return false;
         }
@@ -267,7 +278,7 @@ public class frCadastro extends javax.swing.JDialog {
         //* - 0 ou mais vezes
         //{5} - 5 vezes
         //{2} - 2 vezes
-        if (!edtCadNome.getText().matches("^[\\p{L} ]+$")) { //a- [a
+        if (!edtCadCpf.getText().matches("^[\\p{L} ]+$")) { //a- [a
             JOptionPane.showMessageDialog(null, "O campo 'Nome' possui formato inválido");
             return false;
         }
@@ -300,14 +311,15 @@ public class frCadastro extends javax.swing.JDialog {
         }
         //ler os campos e guardar um objeto
         Vendedor usu = new Vendedor();
-        usu.setNome(edtCadNome.getText());
+        usu.setNome(edtCadCpf.getText());
         usu.setEmail(edtCadEmail.getText());
         usu.setSenha(Utils.calcularHash(new String(edtCadSenha.getPassword())));
         usu.setDataNascimento(Utils.converterStringToDate(edtData.getText()));
+        usu.setCpf(edtCadCpf.getText());
 
      //enviar para o banco de dados
-        CadastroController controller = new CadastroController();
-        if(controller.inserir(usu)){
+        VendedorController controller = new VendedorController();
+        if(controller.cadastroVendedor(usu)){
             JOptionPane.showMessageDialog(null, "Usuario inserido");
             this.dispose();
         }
@@ -317,10 +329,10 @@ public class frCadastro extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JTextField edtCadCpf;
     private javax.swing.JTextField edtCadEmail;
-    private javax.swing.JTextField edtCadNome;
+    private javax.swing.JTextField edtCadNome1;
     private javax.swing.JPasswordField edtCadSenha;
-    private javax.swing.JPasswordField edtCadSenha1;
     private javax.swing.JPasswordField edtConSenha;
     private javax.swing.JFormattedTextField edtData;
     private javax.swing.JLabel jLabel1;
