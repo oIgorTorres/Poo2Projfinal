@@ -8,7 +8,8 @@ email varchar(200) not null,
 idade int not null,
 cpf varchar(14) not null
 );
-
+alter table cliente add column senha varchar(60) not null;
+alter table vendedor modify email varchar(200) not null unique;
 create table vendedor(
 idVendedor int primary key auto_increment,
 nome varchar(200) not null,
@@ -16,6 +17,8 @@ email varchar(200) not null,
 idade int not null,
 cpf varchar(14) not null
 );
+alter table vendedor add column senha varchar(60) not null;
+alter table cliente modify email varchar(200) not null unique;
 
 create table venda(
 idVenda int primary key auto_increment,
@@ -64,3 +67,7 @@ FkidCatalogo int,
 foreign key(FkidProduto) references produto(idProduto),
 foreign key(fkidCatalogo) references catalogo(idCatalogo)
 );
+
+select c.email, c.senha from cliente c where email = '' and senha = ''
+union
+select v.email, v.senha from vendedor v where email = '' and senha = '';
