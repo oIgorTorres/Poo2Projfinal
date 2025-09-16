@@ -6,7 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
-import model.Usuario;
+import model.Vendedor;
 import util.Utils;
 
 /**
@@ -316,7 +316,7 @@ public class frCadastro extends javax.swing.JDialog {
             return;
         }
         //ler os campos e guardar um objeto
-        Usuario usu = new Usuario();
+        Vendedor usu = new Vendedor();
         usu.setNome(edtCadNome.getText());
         usu.setEmail(edtCadEmail.getText());
         usu.setSenha(Utils.calcularHash(new String(edtCadSenha.getPassword())));

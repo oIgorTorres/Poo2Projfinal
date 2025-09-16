@@ -17,11 +17,12 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import model.Vendedor;
 
-public class CadastroController {
+public class VendedorController {
     
-    public boolean inserir() {
-        String sql = "INSERT INTO POOGAMBI (nome, email, senha, cpf)"
+    public boolean cadastroVendedor(Usua) {
+        String sql = "INSERT INTO VENDEDOR (nome, email, senha, cpf)"
                 + "Values (?, ?, ?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
@@ -32,10 +33,10 @@ public class CadastroController {
         try {
             comando = gerenciador.prepararComando(sql);
 
-            comando.setString(1, .getNome());
-            comando.setString(2, .getEmail());
-            comando.setString(3, .getSenha());
-            comando.setString(3, .getCpf());
+            comando.setString(1, usu.getNome());
+            comando.setString(2, usu.getEmail());
+            comando.setString(3, usu.getSenha());
+            comando.setString(3, usu.getCpf());
            
 
             comando.executeUpdate();
