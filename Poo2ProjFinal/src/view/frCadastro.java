@@ -51,7 +51,7 @@ public class frCadastro extends javax.swing.JDialog {
         edtConSenha = new javax.swing.JPasswordField();
         edtCadSenha = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
-        edtCadNome1 = new javax.swing.JTextField();
+        edtCadNome = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -175,13 +175,13 @@ public class frCadastro extends javax.swing.JDialog {
         jLabel8.setText("Cpf");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
 
-        edtCadNome1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        edtCadNome1.addActionListener(new java.awt.event.ActionListener() {
+        edtCadNome.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        edtCadNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtCadNome1ActionPerformed(evt);
+                edtCadNomeActionPerformed(evt);
             }
         });
-        jPanel1.add(edtCadNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 183, 27));
+        jPanel1.add(edtCadNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 183, 27));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,9 +213,9 @@ public class frCadastro extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_btnCancelarMouseClicked
 
-    private void edtCadNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCadNome1ActionPerformed
+    private void edtCadNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCadNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtCadNome1ActionPerformed
+    }//GEN-LAST:event_edtCadNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,7 +260,7 @@ public class frCadastro extends javax.swing.JDialog {
     }
 
     private boolean verificarCampos() {
-        if (edtCadCpf.getText().isEmpty()) {
+        if (edtCadNome.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Campo 'nome' em branco");
             return false;
         }
@@ -278,7 +278,7 @@ public class frCadastro extends javax.swing.JDialog {
         //* - 0 ou mais vezes
         //{5} - 5 vezes
         //{2} - 2 vezes
-        if (!edtCadCpf.getText().matches("^[\\p{L} ]+$")) { //a- [a
+        if (!edtCadNome.getText().matches("^[\\p{L} ]+$")) { //a- [a
             JOptionPane.showMessageDialog(null, "O campo 'Nome' possui formato inválido");
             return false;
         }
@@ -311,7 +311,7 @@ public class frCadastro extends javax.swing.JDialog {
         }
         //ler os campos e guardar um objeto
         Vendedor usu = new Vendedor();
-        usu.setNome(edtCadCpf.getText());
+        usu.setNome(edtCadNome.getText());
         usu.setEmail(edtCadEmail.getText());
         usu.setSenha(Utils.calcularHash(new String(edtCadSenha.getPassword())));
         usu.setDataNascimento(Utils.converterStringToDate(edtData.getText()));
@@ -331,7 +331,7 @@ public class frCadastro extends javax.swing.JDialog {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JTextField edtCadCpf;
     private javax.swing.JTextField edtCadEmail;
-    private javax.swing.JTextField edtCadNome1;
+    private javax.swing.JTextField edtCadNome;
     private javax.swing.JPasswordField edtCadSenha;
     private javax.swing.JPasswordField edtConSenha;
     private javax.swing.JFormattedTextField edtData;
