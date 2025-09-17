@@ -37,7 +37,7 @@ public class VendaController {
     }
      
       public boolean itemVenda(ItemVenda usu) {
-        String sql = "INSERT INTO ITEMVENDA (precoTotal, precoUnitario, quantidadeProduto)"
+        String sql = "INSERT INTO ITEMVENDA (precoTotal, precoUnitario, quantidadeProduto,FkidVenda,FkidProduto)"
                 + "Values (?, ?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
@@ -50,7 +50,9 @@ public class VendaController {
 
             comando.setDouble(1, usu.getPrecoTotal());
             comando.setDouble(2,usu.getPrecoUnitario());
-            comando.setInt(3,(int)usu.getQuantidadeProduto());
+            comando.setInt(3,usu.getQuantidadeProduto());
+            comando.setInt(4, usu.getFkIdVenda());
+            comando.setInt(5, usu.getFkIdProduto());
         
 
             comando.executeUpdate();
