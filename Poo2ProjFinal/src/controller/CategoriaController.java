@@ -9,7 +9,7 @@ import model.Categoria;
 
 
 public class CategoriaController {
-    public boolean ccategoria(Categoria usu) {
+    public boolean categoria(Categoria usu) {
         String sql = "INSERT INTO CATEGORIA (nome)"
                 + "Values (?)";
 
