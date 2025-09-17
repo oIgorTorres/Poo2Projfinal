@@ -45,8 +45,8 @@ public class frLogin extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Tela Login");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
+        jLabel3.setText("Login Vendedor");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
 
         edtEmail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         edtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +64,12 @@ public class frLogin extends javax.swing.JFrame {
         jLabel2.setText("Senha");
 
         btnLimpar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnLimpar.setText("Limpar");
+        btnLimpar.setText("Cancelar");
+        btnLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimparMouseClicked(evt);
+            }
+        });
 
         btnLogar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnLogar.setText("Logar");
@@ -96,6 +101,11 @@ public class frLogin extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/user4.png"))); // NOI18N
 
         jButton1.setText("Alterar para cliente");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -179,6 +189,17 @@ public class frLogin extends javax.swing.JFrame {
     private void btnLogarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogarMouseClicked
         logar();
     }//GEN-LAST:event_btnLogarMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        FrLoginCliente frLoginClient = new FrLoginCliente();
+        dispose();
+        frLoginClient.setVisible(true);
+        
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void btnLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimparMouseClicked
+        dispose();
+    }//GEN-LAST:event_btnLimparMouseClicked
 
     //Verifica se os campos estão preenchidos
     private boolean verificarCampos() {

@@ -39,10 +39,11 @@ public class FrLoginCliente extends javax.swing.JFrame {
         btnLimpar = new javax.swing.JButton();
         btnLogar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        LbNaoPossuiConta = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         edtSenha = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        LbNaoPossuiConta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,7 +54,7 @@ public class FrLoginCliente extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Tela Login");
+        jLabel3.setText("Login Cliente");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
 
         edtEmail.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -72,7 +73,12 @@ public class FrLoginCliente extends javax.swing.JFrame {
         jLabel2.setText("Senha");
 
         btnLimpar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnLimpar.setText("Limpar");
+        btnLimpar.setText("Cancelar");
+        btnLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimparMouseClicked(evt);
+            }
+        });
 
         btnLogar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnLogar.setText("Logar");
@@ -84,14 +90,9 @@ public class FrLoginCliente extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(41, 89, 134));
 
-        LbNaoPossuiConta.setBackground(new java.awt.Color(18, 74, 187));
-        LbNaoPossuiConta.setForeground(new java.awt.Color(255, 255, 255));
-        LbNaoPossuiConta.setText("Não possui uma conta?");
-        LbNaoPossuiConta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LbNaoPossuiContaMouseClicked(evt);
-            }
-        });
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Sobre");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -99,14 +100,14 @@ public class FrLoginCliente extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LbNaoPossuiConta)
+                .addComponent(jLabel6)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LbNaoPossuiConta)
+                .addComponent(jLabel6)
                 .addContainerGap())
         );
 
@@ -119,6 +120,20 @@ public class FrLoginCliente extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/user3.png"))); // NOI18N
 
         jButton1.setText("Alterar para vendedor");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        LbNaoPossuiConta.setBackground(new java.awt.Color(18, 74, 187));
+        LbNaoPossuiConta.setForeground(new java.awt.Color(0, 0, 102));
+        LbNaoPossuiConta.setText("Não possui uma conta?");
+        LbNaoPossuiConta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LbNaoPossuiContaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -148,6 +163,10 @@ public class FrLoginCliente extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(42, 42, 42))))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LbNaoPossuiConta)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +178,7 @@ public class FrLoginCliente extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -173,7 +192,9 @@ public class FrLoginCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpar)
                     .addComponent(btnLogar))
-                .addGap(40, 40, 40)
+                .addGap(23, 23, 23)
+                .addComponent(LbNaoPossuiConta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -209,6 +230,17 @@ public class FrLoginCliente extends javax.swing.JFrame {
         cad.setVisible(true);
 
     }//GEN-LAST:event_LbNaoPossuiContaMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        frLogin frLoginVendedor = new frLogin();
+        dispose();
+        frLoginVendedor.setVisible(true);
+        
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void btnLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimparMouseClicked
+        dispose();
+    }//GEN-LAST:event_btnLimparMouseClicked
 
     //Verifica se os campos estão preenchidos
     private boolean verificarCampos() {
@@ -291,6 +323,7 @@ public class FrLoginCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -52,6 +52,7 @@ public class FrCadastro extends javax.swing.JDialog {
         edtCadSenha = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         edtCadNome = new javax.swing.JTextField();
+        lbJaPossuiUmaConta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -183,6 +184,15 @@ public class FrCadastro extends javax.swing.JDialog {
         });
         jPanel1.add(edtCadNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 183, 27));
 
+        lbJaPossuiUmaConta.setForeground(new java.awt.Color(0, 0, 102));
+        lbJaPossuiUmaConta.setText("Já possui uma conta?");
+        lbJaPossuiUmaConta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbJaPossuiUmaContaMouseClicked(evt);
+            }
+        });
+        jPanel1.add(lbJaPossuiUmaConta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -216,6 +226,12 @@ public class FrCadastro extends javax.swing.JDialog {
     private void edtCadNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCadNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtCadNomeActionPerformed
+
+    private void lbJaPossuiUmaContaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbJaPossuiUmaContaMouseClicked
+        FrLoginCliente frLoginClient = new FrLoginCliente();
+        dispose();
+        frLoginClient.setVisible(true);
+    }//GEN-LAST:event_lbJaPossuiUmaContaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -347,5 +363,6 @@ public class FrCadastro extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lbJaPossuiUmaConta;
     // End of variables declaration//GEN-END:variables
 }
