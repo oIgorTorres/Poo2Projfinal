@@ -6,6 +6,25 @@ public class ItemVenda {
     private double precoTotal;
     private double precoUnitario;
     private int quantidadeProduto;
+    private int fkIdVenda;
+    private int fkIdProduto;
+
+    public int getFkIdVenda() {
+        return fkIdVenda;
+    }
+
+    public void setFkIdVenda(int fkIdVenda) {
+        this.fkIdVenda = fkIdVenda;
+    }
+
+    public int getFkIdProduto() {
+        return fkIdProduto;
+    }
+
+    public void setFkIdProduto(int fkIdProduto) {
+        this.fkIdProduto = fkIdProduto;
+    }
+    
 
     public double getPrecoTotal() {
         return precoTotal;
@@ -23,7 +42,7 @@ public class ItemVenda {
         this.precoUnitario = precoUnitario;
     }
 
-    public double getQuantidadeProduto() {
+    public int getQuantidadeProduto() {
         return quantidadeProduto;
     }
 

@@ -10,8 +10,8 @@ import model.Cliente;
 
 public class ClienteController {
     public boolean cadastroCliente(Cliente usu) {
-        String sql = "INSERT INTO ClIENTE (nome, email, senha, cpf)"
-                + "Values (?, ?, ?, ?)";
+        String sql = "INSERT INTO ClIENTE (nome, email, senha, cpf,dataNascimento)"
+                + "Values (?, ?, ?, ?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
 
@@ -25,6 +25,7 @@ public class ClienteController {
             comando.setString(2, usu.getEmail());
             comando.setString(3, usu.getSenha());
             comando.setString(4, usu.getCpf());
+            comando.setDate(5, new java.sql.Date(usu.getDataNascimento().getTime()));
            
 
             comando.executeUpdate();
