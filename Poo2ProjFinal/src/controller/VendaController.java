@@ -5,13 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import model.Categoria;
+import model.Venda;
 
 
-public class CategoriaController {
-    public boolean cadastroVendedor(Categoria usu) {
-        String sql = "INSERT INTO CATEGORIA (nome)"
-                + "Values (?)";
+public class VendaController {
+     public boolean cadastroVendedor(Venda usu) {
+        String sql = "INSERT INTO CATALOGO (nome, dataValidade)"
+                + "Values (?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
 
@@ -21,8 +21,8 @@ public class CategoriaController {
         try {
             comando = gerenciador.prepararComando(sql);
 
-            comando.setString(1, usu.getNome());
-            
+            comando.setDouble(1, usu.getValorTotal());
+            comando.setDate(2,new java.sql.Date(usu.getDataVenda().getTime()));
         
 
             comando.executeUpdate();
