@@ -11,8 +11,8 @@ import model.Venda;
 
 public class VendaController {
      public boolean venda(Venda usu) {
-        String sql = "INSERT INTO CATALOGO (nome, dataValidade)"
-                + "Values (?, ?)";
+        String sql = "INSERT INTO CATALOGO (nome, dataValidade, FKidVendedor, FkidCliente)"
+                + "Values (?, ?, ?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
 
@@ -24,6 +24,8 @@ public class VendaController {
 
             comando.setDouble(1, usu.getValorTotal());
             comando.setDate(2,new java.sql.Date(usu.getDataVenda().getTime()));
+            comando.setInt(3, usu.getFkIdVendedor());
+            comando.setInt(4, usu.getFkIdCliente());
         
 
             comando.executeUpdate();
