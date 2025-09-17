@@ -12,6 +12,11 @@ cpf varchar(14) not null
 insert into cliente(nome, email, senha, idade, cpf) values('arthur', 'art.tst1@gmail.com',123456, 18, 02323323323);
 alter table cliente add column senha varchar(60) not null;
 alter table vendedor modify email varchar(200) not null unique;
+alter table cliente rename column dataNascimento to dataNascimento;
+alter table vendedor modify column dataNascimento date;
+alter table cliente add column dataNascimento date; 
+alter table cliente drop column dataNascimento;
+
 
 create table vendedor(
 idVendedor int primary key auto_increment,

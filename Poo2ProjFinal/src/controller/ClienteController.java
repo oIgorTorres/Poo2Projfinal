@@ -10,7 +10,7 @@ import model.Cliente;
 
 public class ClienteController {
     public boolean cadastroCliente(Cliente usu) {
-        String sql = "INSERT INTO VENDEDOR (nome, email, senha, cpf)"
+        String sql = "INSERT INTO ClIENTE (nome, email, senha, cpf)"
                 + "Values (?, ?, ?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
