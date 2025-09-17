@@ -9,7 +9,7 @@ import model.Catalogo;
 
 
 public class CatalogoController {
-    public boolean cadastroVendedor(Catalogo usu) {
+    public boolean catalogo(Catalogo usu) {
         String sql = "INSERT INTO CATALOGO (nome, dataValidade)"
                 + "Values (?, ?)";
 

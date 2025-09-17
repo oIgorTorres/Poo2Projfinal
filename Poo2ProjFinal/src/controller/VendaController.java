@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import model.ItemVenda;
 import model.Venda;
 
 
 public class VendaController {
-     public boolean cadastroVendedor(Venda usu) {
+     public boolean venda(Venda usu) {
         String sql = "INSERT INTO CATALOGO (nome, dataValidade)"
                 + "Values (?, ?)";
 
@@ -34,4 +35,33 @@ public class VendaController {
         }
         return false;
     }
+     
+      public boolean itemVenda(ItemVenda usu) {
+        String sql = "INSERT INTO ITEMVENDA (precoTotal, precoUnitario, quantidadeProduto)"
+                + "Values (?, ?, ?)";
+
+        GerenciarConexoes gerenciador = new GerenciarConexoes();
+
+        PreparedStatement comando = null;
+        ResultSet resultado = null;
+
+        try {
+            comando = gerenciador.prepararComando(sql);
+
+            comando.setDouble(1, usu.getPrecoTotal());
+            comando.setDouble(2,usu.getPrecoUnitario());
+            comando.setInt(3,(int)usu.getQuantidadeProduto());
+        
+
+            comando.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            gerenciador.fecharConexao(comando);
+        }
+        return false;
+    }
+     
+     
 }
