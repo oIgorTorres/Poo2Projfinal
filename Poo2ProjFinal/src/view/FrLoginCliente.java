@@ -5,7 +5,7 @@
  */
 package view;
 
-import controller.LoginController;
+import controller.LoginClienteController;
 import javax.swing.JOptionPane;
 
 /**
@@ -266,7 +266,7 @@ public class FrLoginCliente extends javax.swing.JFrame {
 
         //Guardar os dados
         //Consultar no banco de dados
-        LoginController controller = new LoginController();
+        LoginClienteController controller = new LoginClienteController();
 
         if (controller.autenticar(usuario, senha)) {
             //Entra no sistema

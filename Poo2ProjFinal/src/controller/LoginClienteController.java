@@ -18,11 +18,9 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class LoginController {
+public class LoginClienteController {
      public boolean autenticar(String email, String senha) {
-        String sql = "select c.email, c.senha from cliente c where email = '?' and senha = '?'\n" +
-                        "union\n" +
-                    "select v.email, v.senha from vendedor v where email = '?' and senha = '?';";
+        String sql = "select c.email, c.senha from cliente c where email = ? and senha = ?" ;
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
 
@@ -34,6 +32,7 @@ public class LoginController {
 
             comando.setString(1, email);
             comando.setString(2, senha);
+        
 
             resultado = comando.executeQuery();
 
