@@ -19,7 +19,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class LoginClienteController {
-     public boolean autenticar(String email, String senha) {
+     public boolean autenticarCliente(String email, String senha) {
         String sql = "select c.email, c.senha from cliente c where email = ? and senha = ?" ;
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();

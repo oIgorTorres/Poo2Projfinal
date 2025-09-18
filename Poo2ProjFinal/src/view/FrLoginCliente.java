@@ -268,7 +268,7 @@ public class FrLoginCliente extends javax.swing.JFrame {
         //Consultar no banco de dados
         LoginClienteController controller = new LoginClienteController();
 
-        if (controller.autenticar(usuario, senha)) {
+        if (controller.autenticarCliente(usuario, senha)) {
             //Entra no sistema
             frMenu telaMenu = new frMenu();
             telaMenu.setVisible(true);

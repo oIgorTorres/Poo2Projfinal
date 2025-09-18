@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 
 public class LoginVendedorController {
-    public boolean autenticarCliente(String email, String senha) {
+    public boolean autenticarVendedor(String email, String senha) {
         String sql = "select v.email, v.senha from vendedor v where email = ? and senha = ?;";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();

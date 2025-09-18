@@ -5,9 +5,8 @@
  */
 package view;
 
-import controller.LoginClienteController;
 import javax.swing.JOptionPane;
-
+import controller.LoginVendedorController;
 /**
  *
  * @author aluno.saolucas
@@ -225,9 +224,9 @@ public class frLogin extends javax.swing.JFrame {
 
         //Guardar os dados
         //Consultar no banco de dados
-        LoginClienteController controller = new LoginClienteController();
+         LoginVendedorController controller =  new LoginVendedorController();
 
-        if (controller.autenticar(usuario, senha)) {
+        if (controller.autenticarVendedor(usuario, senha)) {
             //Entra no sistema
             FrTelaInicialVendedor telaMenu = new FrTelaInicialVendedor();
             telaMenu.setVisible(true);
