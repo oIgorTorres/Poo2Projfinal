@@ -332,7 +332,7 @@ public class FrCadastro extends javax.swing.JDialog {
         Cliente usu = new Cliente();
         usu.setNome(edtCadNome.getText());
         usu.setEmail(edtCadEmail.getText());
-        usu.setSenha(Utils.calcularHash(new String(edtCadSenha.getPassword())));
+        usu.setSenha((new String(edtCadSenha.getPassword())));
         usu.setDataNascimento(Utils.converterStringToDate(edtData.getText()));
         usu.setCpf(edtCadCpf.getText());
 
@@ -341,6 +341,8 @@ public class FrCadastro extends javax.swing.JDialog {
         if(controller.cadastroCliente(usu)){
             JOptionPane.showMessageDialog(null, "Usuario inserido");
             this.dispose();
+            FrLoginCliente frlogincliente = new FrLoginCliente();
+            frlogincliente.setVisible(true);
             
         }
     }
