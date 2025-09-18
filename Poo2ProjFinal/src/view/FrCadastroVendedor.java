@@ -5,10 +5,8 @@
  */
 package view;
 
-
-import controller.ClienteController;
+import controller.VendedorController;
 import javax.swing.JOptionPane;
-import model.Cliente;
 import model.Vendedor;
 import util.Utils;
 
@@ -16,12 +14,12 @@ import util.Utils;
  *
  * @author aluno.saolucas
  */
-public class FrCadastro extends javax.swing.JDialog {
+public class FrCadastroVendedor extends javax.swing.JDialog {
 
     /**
-     * Creates new form frCadastro
+     * Creates new form FrCadastroVendedor
      */
-    public FrCadastro(java.awt.Frame parent, boolean modal) {
+    public FrCadastroVendedor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -66,23 +64,23 @@ public class FrCadastro extends javax.swing.JDialog {
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Tela Cadastro");
+        jLabel7.setText("Tela Cadastro vendedor");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(137, Short.MAX_VALUE)
+                .addContainerGap(76, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addGap(125, 125, 125))
+                .addGap(71, 71, 71))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
                 .addComponent(jLabel7)
-                .addGap(36, 36, 36))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, -1));
@@ -142,6 +140,11 @@ public class FrCadastro extends javax.swing.JDialog {
         btnCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCadastrarMouseClicked(evt);
+            }
+        });
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
             }
         });
         jPanel1.add(btnCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
@@ -217,66 +220,25 @@ public class FrCadastro extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_edtDataActionPerformed
 
-    private void btnCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarMouseClicked
-        gravar();
-    }//GEN-LAST:event_btnCadastrarMouseClicked
-
     private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
         dispose();
     }//GEN-LAST:event_btnCancelarMouseClicked
+
+    private void btnCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarMouseClicked
+        gravar();
+    }//GEN-LAST:event_btnCadastrarMouseClicked
 
     private void edtCadNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCadNomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtCadNomeActionPerformed
 
     private void lbJaPossuiUmaContaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbJaPossuiUmaContaMouseClicked
-        FrLoginCliente frLoginClient = new FrLoginCliente();
-        dispose();
-        frLoginClient.setVisible(true);
+        
     }//GEN-LAST:event_lbJaPossuiUmaContaMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                FrCadastro dialog = new FrCadastro(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private boolean verificarCampos() {
         if (edtCadNome.getText().isEmpty()) {
@@ -322,14 +284,18 @@ public class FrCadastro extends javax.swing.JDialog {
         }
         return true;
     }
-
-    private void gravar() {
+    
+    
+    
+    
+    
+     private void gravar() {
         //validar o preenchimento dos campos
         if (!verificarCampos()) {
             return;
         }
         //ler os campos e guardar um objeto
-        Cliente usu = new Cliente();
+        Vendedor usu = new Vendedor();
         usu.setNome(edtCadNome.getText());
         usu.setEmail(edtCadEmail.getText());
         usu.setSenha(Utils.calcularHash(new String(edtCadSenha.getPassword())));
@@ -337,14 +303,54 @@ public class FrCadastro extends javax.swing.JDialog {
         usu.setCpf(edtCadCpf.getText());
 
      //enviar para o banco de dados
-        ClienteController controller = new ClienteController();
-        if(controller.cadastroCliente(usu)){
+        VendedorController controller = new VendedorController();
+        if(controller.cadastroVendedor(usu)){
             JOptionPane.showMessageDialog(null, "Usuario inserido");
             this.dispose();
             
         }
     }
 
+    
+    
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FrCadastroVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FrCadastroVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FrCadastroVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FrCadastroVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                FrCadastroVendedor dialog = new FrCadastroVendedor(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
