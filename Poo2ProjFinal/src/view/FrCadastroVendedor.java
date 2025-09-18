@@ -298,7 +298,7 @@ public class FrCadastroVendedor extends javax.swing.JDialog {
         Vendedor usu = new Vendedor();
         usu.setNome(edtCadNome.getText());
         usu.setEmail(edtCadEmail.getText());
-        usu.setSenha(Utils.calcularHash(new String(edtCadSenha.getPassword())));
+        usu.setSenha((new String(edtCadSenha.getPassword())));
         usu.setDataNascimento(Utils.converterStringToDate(edtData.getText()));
         usu.setCpf(edtCadCpf.getText());
 
