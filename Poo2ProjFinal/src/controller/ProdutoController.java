@@ -5,11 +5,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.Produto;
+import java.sql.Types;
 
 public class ProdutoController {
 
-    public boolean produto(Produto usu) {
-        String sql = "INSERT INTO CATALOGO (nome, estoque, preco, FkidCategoria)"
+    public boolean inserir(Produto usu) {
+        String sql = "INSERT INTO PRODUTO (nome, estoque, preco, FkidCategoria)"
                 + "Values (?, ?, ?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
@@ -22,7 +23,10 @@ public class ProdutoController {
 
             comando.setString(1, usu.getNome());
             comando.setInt(2, usu.getEstoque());
-            comando.setInt(3, usu.getFkIdCategoria());
+            comando.setDouble(3, usu.getPreco());
+           // comando.setInt(4, usu.getFkIdCategoria());
+            comando.setNull(4, Types.INTEGER);
+            
 
             comando.executeUpdate();
             return true;

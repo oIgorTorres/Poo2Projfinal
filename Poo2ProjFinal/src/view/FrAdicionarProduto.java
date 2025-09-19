@@ -5,6 +5,14 @@
  */
 package view;
 
+import controller.LoginVendedorController;
+import controller.ProdutoController;
+import java.io.File;
+import javax.swing.Icon;
+import javax.swing.JOptionPane;
+import model.Produto;
+import util.Utils;
+
 /**
  *
  * @author aluno.saolucas
@@ -31,21 +39,24 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        lbVoltar = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        panel = new javax.swing.JPanel();
+        imgFoto = new javax.swing.JLabel();
+        btnVincularImagem = new javax.swing.JButton();
+        edtNomeProduto = new javax.swing.JTextField();
+        edtEstoque = new javax.swing.JTextField();
+        edtValorProduto = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAdicionarProduto = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -56,9 +67,14 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
 
         jPanel3.setBackground(new java.awt.Color(35, 69, 108));
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Voltar");
+        lbVoltar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbVoltar.setForeground(new java.awt.Color(255, 255, 255));
+        lbVoltar.setText("Voltar");
+        lbVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbVoltarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -66,14 +82,14 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel5)
+                .addComponent(lbVoltar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
+                .addComponent(lbVoltar)
                 .addContainerGap())
         );
 
@@ -102,43 +118,48 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 635, -1));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(panelLayout);
+        panelLayout.setHorizontalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgFoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        panelLayout.setVerticalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLayout.createSequentialGroup()
+                .addComponent(imgFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 152, -1, -1));
+        jPanel1.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 152, 90, -1));
 
-        jButton1.setText("Vincular imagem");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 185, -1, -1));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+        btnVincularImagem.setText("Vincular imagem");
+        btnVincularImagem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVincularImagemMouseClicked(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 300, 154, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 364, 85, -1));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 432, 154, -1));
+        jPanel1.add(btnVincularImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 185, -1, -1));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        edtNomeProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                edtNomeProdutoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 282, 196, 88));
+        jPanel1.add(edtNomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 300, 154, -1));
+        jPanel1.add(edtEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 364, 85, -1));
+        jPanel1.add(edtValorProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 432, 154, -1));
 
         jButton2.setText("limpar");
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 388, -1, -1));
 
-        jButton3.setText("adicionar");
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 388, -1, -1));
+        btnAdicionarProduto.setText("adicionar");
+        btnAdicionarProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAdicionarProdutoMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnAdicionarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 388, -1, -1));
 
         jPanel5.setBackground(new java.awt.Color(35, 69, 108));
 
@@ -177,6 +198,16 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         jLabel3.setText("Estoque");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 342, -1, -1));
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Descrição");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -191,17 +222,88 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void edtNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeProdutoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_edtNomeProdutoActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void btnAdicionarProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarProdutoMouseClicked
+        cadastrarProduto();
+    }//GEN-LAST:event_btnAdicionarProdutoMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void lbVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbVoltarMouseClicked
+        FrTelaInicialVendedor telaInicial = new FrTelaInicialVendedor();
+        dispose();
+        telaInicial.setVisible(true);
+    }//GEN-LAST:event_lbVoltarMouseClicked
+
+    private void btnVincularImagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVincularImagemMouseClicked
+            //escolher a imagem
+    File arquivo = Utils.escolherImagem();
+    
+    //carrega a imagem se selecionou um arquivo
+    if(arquivo != null){
+      //Converte para um ícone
+      Icon icone = Utils.converterFileToIcon(arquivo);
+    
+      //redimensiono a imagem para caber no imgFoto
+      Icon iconeNovo = Utils.redimensionarImagem(icone, 110, 100);
+      
+      imgFoto.setIcon(iconeNovo);
+    }
+    
+    }//GEN-LAST:event_btnVincularImagemMouseClicked
+
+   
+    private boolean verificarCampos() {
+        if (edtNomeProduto.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Nome do produto em branco");
+            return false;
+        }
+        if (edtEstoque.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, "Estoque do produto em branco");
+            return false;
+        }
+        if(edtValorProduto.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "Valor do produto em branco");
+            return false;
+        }
+        return true;
+    }
+    
+    
+     private void cadastrarProduto() {
+
+        if (!verificarCampos()) {
+            return;
+        }
+        //Ler os campos
+        String nome = edtNomeProduto.getText();
+        int estoque = Integer.parseInt(edtEstoque.getText());
+        double preco = Double.parseDouble(edtValorProduto.getText());
+        
+        Produto produto = new Produto();
+        produto.setNome(nome);
+        produto.setEstoque(estoque);
+        produto.setPreco(preco);
+        
+        ProdutoController controller =  new ProdutoController();
+        
+         if (controller.inserir(produto)) { 
+              JOptionPane.showMessageDialog(rootPane, "Produto inserido");
+         } else{
+             JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos obrigatórios");
+         }
+        
+        
+         
+        
+        
+     }
+        
+    
+    
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -242,9 +344,13 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAdicionarProduto;
+    private javax.swing.JButton btnVincularImagem;
+    private javax.swing.JTextField edtEstoque;
+    private javax.swing.JTextField edtNomeProduto;
+    private javax.swing.JTextField edtValorProduto;
+    private javax.swing.JLabel imgFoto;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -254,11 +360,10 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lbVoltar;
+    private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }
