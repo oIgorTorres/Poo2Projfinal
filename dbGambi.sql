@@ -17,7 +17,8 @@ alter table vendedor modify column dataNascimento date;
 alter table cliente add column dataNascimento date; 
 alter table cliente drop column dataNascimento;
 
-
+select * from vendedor;
+select * from cliente;
 create table vendedor(
 idVendedor int primary key auto_increment,
 nome varchar(200) not null,
@@ -53,12 +54,16 @@ preco decimal(10, 2) not null,
 FkidCategoria int,
 foreign key(FkidCategoria) references categoria(idCategoria)
 );
+alter table produto add imagem blob;
+
 
 create table catalogo(
 idCatalogo int primary key auto_increment,
 nome varchar(200) not null,
 dataValidade datetime 
 );
+
+alter table produto add imagem blob;
 
 create table itemVenda(
 precoTotal decimal(10, 2) null,
@@ -76,6 +81,11 @@ FkidCatalogo int,
 foreign key(FkidProduto) references produto(idProduto),
 foreign key(fkidCatalogo) references catalogo(idCatalogo)
 );
+
+select first 3  * from produto;
+
+select * from produto;
+
 
 select c.email, c.senha from cliente c where email = '' and senha = ''
 union

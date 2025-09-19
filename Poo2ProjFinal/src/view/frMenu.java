@@ -5,7 +5,10 @@
  */
 package view;
 
+import controller.ProdutoController;
+import java.util.List;
 import javax.swing.JOptionPane;
+import model.Produto;
 
 /**
  *
@@ -38,19 +41,22 @@ public class frMenu extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
+        lbProduto2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        lbPreco2 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        lbProduto3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
+        lbPreco3 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
+        lbProduto1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
+        lbPreco1 = new javax.swing.JLabel();
+        btnProxima = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        btnRetornar = new javax.swing.JButton();
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -210,37 +216,39 @@ public class frMenu extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbProduto2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+            .addComponent(lbProduto2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
         );
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/shop.png"))); // NOI18N
         jButton1.setText("Comprar");
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("R$10");
+        lbPreco2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbPreco2.setForeground(new java.awt.Color(0, 0, 0));
+        lbPreco2.setText("R$10");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jButton1))
+                        .addContainerGap()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel6)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(jButton1))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(lbPreco2)))
+                        .addGap(0, 45, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,7 +256,7 @@ public class frMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(jLabel6)
+                .addComponent(lbPreco2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
@@ -262,19 +270,19 @@ public class frMenu extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbProduto3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+            .addComponent(lbProduto3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
         );
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/shop.png"))); // NOI18N
         jButton3.setText("Comprar");
 
-        jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("R$10");
+        lbPreco3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbPreco3.setForeground(new java.awt.Color(0, 0, 0));
+        lbPreco3.setText("R$");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -292,7 +300,7 @@ public class frMenu extends javax.swing.JFrame {
                                 .addComponent(jButton3))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addComponent(jLabel11)))
+                                .addComponent(lbPreco3)))
                         .addGap(0, 45, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -302,7 +310,7 @@ public class frMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(jLabel11)
+                .addComponent(lbPreco3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addContainerGap())
@@ -316,19 +324,19 @@ public class frMenu extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbProduto1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+            .addComponent(lbProduto1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
         );
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/shop.png"))); // NOI18N
         jButton4.setText("Comprar");
 
-        jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("R$10");
+        lbPreco1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbPreco1.setForeground(new java.awt.Color(0, 0, 0));
+        lbPreco1.setText("R$10");
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -346,7 +354,7 @@ public class frMenu extends javax.swing.JFrame {
                                 .addComponent(jButton4))
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addComponent(jLabel13)))
+                                .addComponent(lbPreco1)))
                         .addGap(0, 45, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -356,13 +364,33 @@ public class frMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addComponent(jLabel13)
+                .addComponent(lbPreco1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jButton4)
                 .addContainerGap())
         );
 
         jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 200, 270));
+
+        btnProxima.setText("Próxima página");
+        btnProxima.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProximaMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnProxima, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, -1, -1));
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Página 1");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
+
+        btnRetornar.setText("Retornar");
+        btnRetornar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRetornarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnRetornar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -379,6 +407,30 @@ public class frMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnProximaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProximaMouseClicked
+        buscarProdutos(0);
+    }//GEN-LAST:event_btnProximaMouseClicked
+
+    private void btnRetornarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetornarMouseClicked
+       btnRetornar.setVisible(false);
+    }//GEN-LAST:event_btnRetornarMouseClicked
+
+    public void buscarProdutos(int offset) {
+
+        ProdutoController controller = new ProdutoController();
+
+        List<Produto> lista = controller.consultar(offset);
+
+        Produto produto = lista.get(0);
+
+        produto.getNome();
+        produto.getEstoque();
+        produto.getPreco();
+        produto.getImagem();
+                
+                
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -413,32 +465,25 @@ public class frMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnProxima;
+    private javax.swing.JButton btnRetornar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -447,5 +492,11 @@ public class frMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lbPreco1;
+    private javax.swing.JLabel lbPreco2;
+    private javax.swing.JLabel lbPreco3;
+    private javax.swing.JLabel lbProduto1;
+    private javax.swing.JLabel lbProduto2;
+    private javax.swing.JLabel lbProduto3;
     // End of variables declaration//GEN-END:variables
 }
