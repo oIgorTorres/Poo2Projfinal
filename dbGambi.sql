@@ -19,6 +19,7 @@ alter table cliente drop column dataNascimento;
 
 select * from vendedor;
 select * from cliente;
+select * from produto;
 create table vendedor(
 idVendedor int primary key auto_increment,
 nome varchar(200) not null,
@@ -62,7 +63,6 @@ idCatalogo int primary key auto_increment,
 nome varchar(200) not null,
 dataValidade datetime 
 );
-
 alter table produto add imagem blob;
 
 create table itemVenda(
@@ -82,7 +82,7 @@ foreign key(FkidProduto) references produto(idProduto),
 foreign key(fkidCatalogo) references catalogo(idCatalogo)
 );
 
-select first 3  * from produto;
+select first 3   * from produto;
 
 select * from produto;
 
