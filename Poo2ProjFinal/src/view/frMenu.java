@@ -34,9 +34,9 @@ public class frMenu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lbHardware = new javax.swing.JLabel();
+        lbCarrinho = new javax.swing.JLabel();
+        lbComputadores = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -55,7 +55,7 @@ public class frMenu extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         lbPreco1 = new javax.swing.JLabel();
         btnProxima = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        lbPagina = new javax.swing.JLabel();
         btnRetornar = new javax.swing.JButton();
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -147,17 +147,32 @@ public class frMenu extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(35, 69, 108));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Hardware");
+        lbHardware.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbHardware.setForeground(new java.awt.Color(255, 255, 255));
+        lbHardware.setText("Hardware");
+        lbHardware.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbHardwareMouseClicked(evt);
+            }
+        });
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Carrinho");
+        lbCarrinho.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbCarrinho.setForeground(new java.awt.Color(255, 255, 255));
+        lbCarrinho.setText("Carrinho");
+        lbCarrinho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbCarrinhoMouseClicked(evt);
+            }
+        });
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Computadores");
+        lbComputadores.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbComputadores.setForeground(new java.awt.Color(255, 255, 255));
+        lbComputadores.setText("Computadores");
+        lbComputadores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbComputadoresMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -165,11 +180,11 @@ public class frMenu extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel4)
+                .addComponent(lbComputadores)
                 .addGap(185, 185, 185)
-                .addComponent(jLabel2)
+                .addComponent(lbHardware)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(lbCarrinho)
                 .addGap(47, 47, 47))
         );
         jPanel3Layout.setVerticalGroup(
@@ -177,9 +192,9 @@ public class frMenu extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(lbHardware)
+                    .addComponent(lbCarrinho)
+                    .addComponent(lbComputadores))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
@@ -380,9 +395,9 @@ public class frMenu extends javax.swing.JFrame {
         });
         jPanel1.add(btnProxima, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, -1, -1));
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Página 1");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
+        lbPagina.setForeground(new java.awt.Color(0, 0, 0));
+        lbPagina.setText("Página 1");
+        jPanel1.add(lbPagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
 
         btnRetornar.setText("Retornar");
         btnRetornar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -415,6 +430,24 @@ public class frMenu extends javax.swing.JFrame {
     private void btnRetornarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetornarMouseClicked
        btnRetornar.setVisible(false);
     }//GEN-LAST:event_btnRetornarMouseClicked
+
+    private void lbCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCarrinhoMouseClicked
+        FrCarrinho frcarrinho = new FrCarrinho();
+        dispose();
+        frcarrinho.setVisible(true);
+    }//GEN-LAST:event_lbCarrinhoMouseClicked
+
+    private void lbHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbHardwareMouseClicked
+        frHardware frhardware = new frHardware();
+        dispose();
+        frhardware.setVisible(true);
+    }//GEN-LAST:event_lbHardwareMouseClicked
+
+    private void lbComputadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbComputadoresMouseClicked
+        frComputadores  frcomputadores = new frComputadores();
+        dispose();
+        frcomputadores.setVisible(true);
+    }//GEN-LAST:event_lbComputadoresMouseClicked
 
     public void buscarProdutos(int offset) {
 
@@ -472,11 +505,7 @@ public class frMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
@@ -492,6 +521,10 @@ public class frMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lbCarrinho;
+    private javax.swing.JLabel lbComputadores;
+    private javax.swing.JLabel lbHardware;
+    private javax.swing.JLabel lbPagina;
     private javax.swing.JLabel lbPreco1;
     private javax.swing.JLabel lbPreco2;
     private javax.swing.JLabel lbPreco3;

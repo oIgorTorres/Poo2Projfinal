@@ -12,7 +12,6 @@ import javax.swing.JOptionPane;
 import model.Catalogo;
 import util.Utils;
 
-
 /**
  *
  * @author aluno.saolucas
@@ -46,9 +45,7 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         edtNomeCatalogo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
         btnAdicionarCatalogo = new javax.swing.JButton();
         edtDataCatalogo = new javax.swing.JFormattedTextField();
 
@@ -72,7 +69,7 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jLabel2)
-                .addContainerGap(543, Short.MAX_VALUE))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,21 +88,21 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(40, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addGap(32, 32, 32)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, -1, 140));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -6, 380, 140));
 
         jPanel4.setBackground(new java.awt.Color(35, 69, 108));
 
@@ -118,19 +115,19 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(324, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addGap(26, 26, 26))
+                .addGap(14, 14, 14))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel6)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 609, -1));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 380, -1));
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nome do catálogo");
@@ -147,13 +144,13 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
         jLabel4.setText("Data de validade");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 210, -1));
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Descrição");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 210, 70));
-
-        jButton1.setText("limpar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, -1, -1));
+        btnLimpar.setText("limpar");
+        btnLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimparMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, -1));
 
         btnAdicionarCatalogo.setText("adicionar");
         btnAdicionarCatalogo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,14 +158,14 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
                 btnAdicionarCatalogoMouseClicked(evt);
             }
         });
-        jPanel1.add(btnAdicionarCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, -1, -1));
+        jPanel1.add(btnAdicionarCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, -1, -1));
         jPanel1.add(edtDataCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 110, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,8 +183,12 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
         cadastrarCatalogo();
     }//GEN-LAST:event_btnAdicionarCatalogoMouseClicked
 
-    
-     private boolean verificarCampos() {
+    private void btnLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimparMouseClicked
+        edtNomeCatalogo.setText("");
+        edtDataCatalogo.setText("");
+    }//GEN-LAST:event_btnLimparMouseClicked
+
+    private boolean verificarCampos() {
         if (edtNomeCatalogo.getText().isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Nome do estoque em branco");
             return false;
@@ -198,10 +199,8 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
         }
         return true;
     }
-     
-     
-     
-     private void cadastrarCatalogo() {
+
+    private void cadastrarCatalogo() {
 
         if (!verificarCampos()) {
             return;
@@ -209,33 +208,22 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
         //Ler os campos
         String nome = edtNomeCatalogo.getText();
         Date data = Utils.converterStringToDate(edtDataCatalogo.getText());
-        
+
         Catalogo catalogo = new Catalogo();
-        
+
         catalogo.setNome(nome);
         catalogo.setDataValidade(data);
-        
-        CatalogoController controller =  new CatalogoController();
-        
-         if (controller.inserir(catalogo)) { 
-              JOptionPane.showMessageDialog(rootPane, "Catálogo inserido");
-         } else{
-             JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos obrigatórios");
-         }
-         
-         
-         
-         
-         
-         
-     }
-        
-    
-    
-         
-    
-    
-    
+
+        CatalogoController controller = new CatalogoController();
+
+        if (controller.inserir(catalogo)) {
+            JOptionPane.showMessageDialog(rootPane, "Catálogo inserido");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos obrigatórios");
+        }
+
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -277,19 +265,17 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarCatalogo;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JFormattedTextField edtDataCatalogo;
     private javax.swing.JTextField edtNomeCatalogo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

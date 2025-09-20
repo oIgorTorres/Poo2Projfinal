@@ -47,16 +47,13 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         edtNomeProduto = new javax.swing.JTextField();
         edtEstoque = new javax.swing.JTextField();
         edtValorProduto = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
         btnAdicionarProduto = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -155,8 +152,13 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         jPanel1.add(edtEstoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 364, 85, -1));
         jPanel1.add(edtValorProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 432, 154, -1));
 
-        jButton2.setText("limpar");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(357, 388, -1, -1));
+        btnLimpar.setText("limpar");
+        btnLimpar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLimparMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, -1, -1));
 
         btnAdicionarProduto.setText("adicionar");
         btnAdicionarProduto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -164,7 +166,7 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
                 btnAdicionarProdutoMouseClicked(evt);
             }
         });
-        jPanel1.add(btnAdicionarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 388, -1, -1));
+        jPanel1.add(btnAdicionarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, -1, -1));
 
         jPanel5.setBackground(new java.awt.Color(35, 69, 108));
 
@@ -203,16 +205,6 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         jLabel3.setText("Estoque");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 342, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, -1, -1));
-
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Descrição");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -242,20 +234,20 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
     }//GEN-LAST:event_lbVoltarMouseClicked
 
     private void btnVincularImagemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVincularImagemMouseClicked
-            //escolher a imagem
-    File arquivo = Utils.escolherImagem();
-    
-    //carrega a imagem se selecionou um arquivo
-    if(arquivo != null){
-      //Converte para um ícone
-      Icon icone = Utils.converterFileToIcon(arquivo);
-    
-      //redimensiono a imagem para caber no imgFoto
-      Icon iconeNovo = Utils.redimensionarImagem(icone, 110, 100);
-      
-      imgFoto.setIcon(iconeNovo);
-    }
-    
+        //escolher a imagem
+        File arquivo = Utils.escolherImagem();
+
+        //carrega a imagem se selecionou um arquivo
+        if (arquivo != null) {
+            //Converte para um ícone
+            Icon icone = Utils.converterFileToIcon(arquivo);
+
+            //redimensiono a imagem para caber no imgFoto
+            Icon iconeNovo = Utils.redimensionarImagem(icone, 110, 100);
+
+            imgFoto.setIcon(iconeNovo);
+        }
+
     }//GEN-LAST:event_btnVincularImagemMouseClicked
 
     private void btnVincularImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVincularImagemActionPerformed
@@ -263,6 +255,13 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
     }//GEN-LAST:event_btnVincularImagemActionPerformed
 
    
+    private void btnLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimparMouseClicked
+        edtNomeProduto.setText("");
+        edtEstoque.setText("");
+        edtValorProduto.setText("");
+
+    }//GEN-LAST:event_btnLimparMouseClicked
+
     private boolean verificarCampos() {
         if (edtNomeProduto.getText().isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Nome do produto em branco");
@@ -272,15 +271,14 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(rootPane, "Estoque do produto em branco");
             return false;
         }
-        if(edtValorProduto.getText().isEmpty()){
+        if (edtValorProduto.getText().isEmpty()) {
             JOptionPane.showMessageDialog(rootPane, "Valor do produto em branco");
             return false;
         }
         return true;
     }
-    
-    
-     private void cadastrarProduto() {
+
+    private void cadastrarProduto() {
 
         if (!verificarCampos()) {
             return;
@@ -289,30 +287,22 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         String nome = edtNomeProduto.getText();
         int estoque = Integer.parseInt(edtEstoque.getText());
         double preco = Double.parseDouble(edtValorProduto.getText());
-        
+
         Produto produto = new Produto();
         produto.setNome(nome);
         produto.setEstoque(estoque);
         produto.setPreco(preco);
-        
-        ProdutoController controller =  new ProdutoController();
-        
-         if (controller.inserir(produto)) { 
-              JOptionPane.showMessageDialog(rootPane, "Produto inserido");
-         } else{
-             JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos obrigatórios");
-         }
-        
-        
-         
-        
-        
-     }
-        
-    
-    
-    
-    
+
+        ProdutoController controller = new ProdutoController();
+
+        if (controller.inserir(produto)) {
+            JOptionPane.showMessageDialog(rootPane, "Produto inserido");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos obrigatórios");
+        }
+
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -354,24 +344,21 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarProduto;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnVincularImagem;
     private javax.swing.JTextField edtEstoque;
     private javax.swing.JTextField edtNomeProduto;
     private javax.swing.JTextField edtValorProduto;
     private javax.swing.JLabel imgFoto;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lbVoltar;
     private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
