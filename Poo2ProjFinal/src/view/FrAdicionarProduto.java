@@ -136,6 +136,11 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
                 btnVincularImagemMouseClicked(evt);
             }
         });
+        btnVincularImagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVincularImagemActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnVincularImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 185, -1, -1));
 
         edtNomeProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -245,6 +250,11 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
 
     }//GEN-LAST:event_btnVincularImagemMouseClicked
 
+    private void btnVincularImagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVincularImagemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVincularImagemActionPerformed
+
+   
     private void btnLimparMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLimparMouseClicked
         edtNomeProduto.setText("");
         edtEstoque.setText("");
