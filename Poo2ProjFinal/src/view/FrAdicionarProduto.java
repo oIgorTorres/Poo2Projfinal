@@ -282,6 +282,7 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         produto.setNome(nome);
         produto.setEstoque(estoque);
         produto.setPreco(preco);
+        produto.setImagem(imgFoto.getIcon());
 
         ProdutoController controller = new ProdutoController();
 

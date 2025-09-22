@@ -13,12 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import util.Utils;
 
 public class ProdutoController {
 
     public boolean inserir(Produto usu) {
-        String sql = "INSERT INTO PRODUTO (nome, estoque, preco, FkidCategoria)"
-                + "Values (?, ?, ?, ?)";
+        String sql = "INSERT INTO PRODUTO (nome, estoque, preco, FkidCategoria, imagem)"
+                + "Values (?, ?, ?, ?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
 
@@ -33,6 +34,7 @@ public class ProdutoController {
             comando.setDouble(3, usu.getPreco());
             // comando.setInt(4, usu.getFkIdCategoria());
             comando.setNull(4, Types.INTEGER);
+            comando.setBytes(5, Utils.converterIconToBytes(usu.getImagem()));
 
             comando.executeUpdate();
             return true;

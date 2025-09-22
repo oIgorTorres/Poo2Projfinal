@@ -63,7 +63,7 @@ public class FrCarrinho extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(133, Short.MAX_VALUE)
+                .addContainerGap(93, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(380, 380, 380))
         );
@@ -75,7 +75,7 @@ public class FrCarrinho extends javax.swing.JFrame {
                 .addGap(31, 31, 31))
         );
 
-        pnlPrincipal.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, -1));
+        pnlPrincipal.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, -1));
 
         jPanel3.setBackground(new java.awt.Color(35, 69, 108));
 
@@ -95,7 +95,7 @@ public class FrCarrinho extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(lbVoltar)
-                .addContainerGap(588, Short.MAX_VALUE))
+                .addContainerGap(548, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +105,7 @@ public class FrCarrinho extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pnlPrincipal.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 660, -1));
+        pnlPrincipal.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 620, -1));
 
         jPanel2.setBackground(new java.awt.Color(35, 69, 108));
 
@@ -118,9 +118,9 @@ public class FrCarrinho extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(585, Short.MAX_VALUE)
+                .addContainerGap(523, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(23, 23, 23))
+                .addGap(45, 45, 45))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,7 +130,7 @@ public class FrCarrinho extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pnlPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 690, 660, 40));
+        pnlPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 620, 40));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -189,24 +189,24 @@ public class FrCarrinho extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Valor Total: ");
-        pnlPrincipal.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, -1, -1));
+        pnlPrincipal.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, -1, -1));
 
         jButton1.setText("Executar Compra");
-        pnlPrincipal.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 650, -1, -1));
+        pnlPrincipal.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 630, -1, -1));
 
         jButton2.setText("Remover");
-        pnlPrincipal.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, -1, -1));
+        pnlPrincipal.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
 
         jButton3.setText("Remover");
-        pnlPrincipal.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, -1, -1));
+        pnlPrincipal.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, -1, -1));
 
         jButton4.setText("Remover");
-        pnlPrincipal.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, -1, -1));
+        pnlPrincipal.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("0");
-        pnlPrincipal.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 660, -1, -1));
+        pnlPrincipal.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 640, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,7 +216,7 @@ public class FrCarrinho extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 731, Short.MAX_VALUE)
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

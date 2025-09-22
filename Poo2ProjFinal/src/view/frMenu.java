@@ -36,27 +36,8 @@ public class frMenu extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         lbHardware = new javax.swing.JLabel();
         lbCarrinho = new javax.swing.JLabel();
-        lbComputadores = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        lbProduto2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        lbPreco2 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        lbProduto3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        lbPreco3 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        lbProduto1 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        lbPreco1 = new javax.swing.JLabel();
-        btnProxima = new javax.swing.JButton();
-        lbPagina = new javax.swing.JLabel();
-        btnRetornar = new javax.swing.JButton();
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -149,7 +130,7 @@ public class frMenu extends javax.swing.JFrame {
 
         lbHardware.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbHardware.setForeground(new java.awt.Color(255, 255, 255));
-        lbHardware.setText("Hardware");
+        lbHardware.setText("Hardware e Computadores");
         lbHardware.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbHardwareMouseClicked(evt);
@@ -165,25 +146,14 @@ public class frMenu extends javax.swing.JFrame {
             }
         });
 
-        lbComputadores.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lbComputadores.setForeground(new java.awt.Color(255, 255, 255));
-        lbComputadores.setText("Computadores");
-        lbComputadores.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbComputadoresMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(lbComputadores)
-                .addGap(185, 185, 185)
+                .addContainerGap(263, Short.MAX_VALUE)
                 .addComponent(lbHardware)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addGap(141, 141, 141)
                 .addComponent(lbCarrinho)
                 .addGap(47, 47, 47))
         );
@@ -193,8 +163,7 @@ public class frMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbHardware)
-                    .addComponent(lbCarrinho)
-                    .addComponent(lbComputadores))
+                    .addComponent(lbCarrinho))
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
@@ -225,188 +194,6 @@ public class frMenu extends javax.swing.JFrame {
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 760, -1));
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbProduto2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbProduto2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-        );
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/shop.png"))); // NOI18N
-        jButton1.setText("Comprar");
-
-        lbPreco2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lbPreco2.setForeground(new java.awt.Color(0, 0, 0));
-        lbPreco2.setText("R$10");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jButton1))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(lbPreco2)))
-                        .addGap(0, 45, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(lbPreco2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
-        );
-
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 200, 270));
-
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbProduto3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbProduto3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-        );
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/shop.png"))); // NOI18N
-        jButton3.setText("Comprar");
-
-        lbPreco3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lbPreco3.setForeground(new java.awt.Color(0, 0, 0));
-        lbPreco3.setText("R$");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jButton3))
-                            .addGroup(jPanel9Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(lbPreco3)))
-                        .addGap(0, 45, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(lbPreco3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addContainerGap())
-        );
-
-        jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 200, 270));
-
-        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbProduto1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbProduto1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-        );
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/shop.png"))); // NOI18N
-        jButton4.setText("Comprar");
-
-        lbPreco1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lbPreco1.setForeground(new java.awt.Color(0, 0, 0));
-        lbPreco1.setText("R$10");
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
-                                .addComponent(jButton4))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(lbPreco1)))
-                        .addGap(0, 45, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(lbPreco1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addContainerGap())
-        );
-
-        jPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 200, 270));
-
-        btnProxima.setText("Próxima página");
-        btnProxima.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnProximaMouseClicked(evt);
-            }
-        });
-        jPanel1.add(btnProxima, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, -1, -1));
-
-        lbPagina.setForeground(new java.awt.Color(0, 0, 0));
-        lbPagina.setText("Página 1");
-        jPanel1.add(lbPagina, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, -1));
-
-        btnRetornar.setText("Retornar");
-        btnRetornar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRetornarMouseClicked(evt);
-            }
-        });
-        jPanel1.add(btnRetornar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -423,14 +210,6 @@ public class frMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnProximaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProximaMouseClicked
-        buscarProdutos(0);
-    }//GEN-LAST:event_btnProximaMouseClicked
-
-    private void btnRetornarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRetornarMouseClicked
-       btnRetornar.setVisible(false);
-    }//GEN-LAST:event_btnRetornarMouseClicked
-
     private void lbCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCarrinhoMouseClicked
         FrCarrinho frcarrinho = new FrCarrinho();
         dispose();
@@ -438,32 +217,10 @@ public class frMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_lbCarrinhoMouseClicked
 
     private void lbHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbHardwareMouseClicked
-        frHardware frhardware = new frHardware();
-        dispose();
-        frhardware.setVisible(true);
+       
     }//GEN-LAST:event_lbHardwareMouseClicked
 
-    private void lbComputadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbComputadoresMouseClicked
-        frComputadores  frcomputadores = new frComputadores();
-        dispose();
-        frcomputadores.setVisible(true);
-    }//GEN-LAST:event_lbComputadoresMouseClicked
-
-    public void buscarProdutos(int offset) {
-
-        ProdutoController controller = new ProdutoController();
-
-        List<Produto> lista = controller.consultar(offset);
-
-        Produto produto = lista.get(0);
-
-        produto.getNome();
-        produto.getEstoque();
-        produto.getPreco();
-        produto.getImagem();
-                
-                
-    }
+  
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -498,38 +255,19 @@ public class frMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnProxima;
-    private javax.swing.JButton btnRetornar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lbCarrinho;
-    private javax.swing.JLabel lbComputadores;
     private javax.swing.JLabel lbHardware;
-    private javax.swing.JLabel lbPagina;
-    private javax.swing.JLabel lbPreco1;
-    private javax.swing.JLabel lbPreco2;
-    private javax.swing.JLabel lbPreco3;
-    private javax.swing.JLabel lbProduto1;
-    private javax.swing.JLabel lbProduto2;
-    private javax.swing.JLabel lbProduto3;
     // End of variables declaration//GEN-END:variables
 }
