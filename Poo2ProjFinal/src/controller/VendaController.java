@@ -6,12 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import model.ItemVenda;
+import model.Produto;
 import model.Venda;
 
 
 public class VendaController {
      public boolean venda(Venda usu) {
-        String sql = "INSERT INTO CATALOGO (nome, dataValidade, FKidVendedor, FkidCliente)"
+        String sql = "INSERT INTO venda (dataValidade, FKidVendedor, FkidCliente, valortotal)"
                 + "Values (?, ?, ?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
@@ -22,10 +23,11 @@ public class VendaController {
         try {
             comando = gerenciador.prepararComando(sql);
 
-            comando.setDouble(1, usu.getValorTotal());
-            comando.setDate(2,new java.sql.Date(usu.getDataVenda().getTime()));
-            comando.setInt(3, usu.getFkIdVendedor());
-            comando.setInt(4, usu.getFkIdCliente());
+            
+            comando.setDate(1, new java.sql.Date(usu.getDataVenda().getTime()));
+            comando.setInt(2, usu.getFkIdVendedor());
+            comando.setInt(3, usu.getFkIdCliente());
+            comando.setDouble(4, usu.getValorTotal());
         
 
             comando.executeUpdate();
@@ -39,8 +41,8 @@ public class VendaController {
     }
      
       public boolean itemVenda(ItemVenda usu) {
-        String sql = "INSERT INTO ITEMVENDA (precoTotal, precoUnitario, quantidadeProduto,FkidVenda,FkidProduto)"
-                + "Values (?, ?, ?)";
+        String sql = "INSERT INTO ITEMVENDA (precoTotal, precoUnitario, quantidadeProduto, FkidVenda, FkidProduto)"
+                + "Values (?, ?, ?, ?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
 
@@ -66,6 +68,13 @@ public class VendaController {
         }
         return false;
     }
+      
+      
+        public boolean consultar(Produto usu) {
+      String sql = "SELECT * FROM vendas ";
      
-     
+              
+              
+              
+              
 }

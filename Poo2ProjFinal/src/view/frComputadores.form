@@ -123,8 +123,8 @@
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
                       <Component id="lbCarrinho" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="235" max="32767" attributes="0"/>
-                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="196" max="32767" attributes="0"/>
+                      <Component id="filtro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -136,7 +136,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lbCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="filtro" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="7" max="32767" attributes="0"/>
                   </Group>
@@ -169,14 +169,15 @@
                 <Property name="text" type="java.lang.String" value="Voltar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBox1">
+            <Component class="javax.swing.JComboBox" name="filtro">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
-                    <StringItem index="0" value="Item 1"/>
-                    <StringItem index="1" value="Item 2"/>
-                    <StringItem index="2" value="Item 3"/>
-                    <StringItem index="3" value="Item 4"/>
+                  <StringArray count="5">
+                    <StringItem index="0" value="Hd"/>
+                    <StringItem index="1" value="Ssd"/>
+                    <StringItem index="2" value="Mem&#xf3;ria"/>
+                    <StringItem index="3" value="Processador"/>
+                    <StringItem index="4" value="Fonte"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -540,6 +541,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Comprar"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnComprar1MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbPreco1">
               <Properties>

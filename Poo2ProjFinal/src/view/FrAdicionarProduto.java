@@ -141,7 +141,7 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
                 btnVincularImagemActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVincularImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
+        jPanel1.add(btnVincularImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
 
         edtNomeProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

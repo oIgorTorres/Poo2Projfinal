@@ -115,7 +115,7 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="lbVoltar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="457" max="32767" attributes="0"/>
-                      <Component id="lbRetornar" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="lbProxima" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
@@ -130,7 +130,7 @@
                           <Component id="lbProxima" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lbVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lbRetornar" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -153,17 +153,17 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbVoltarMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="lbRetornar">
+            <Component class="javax.swing.JLabel" name="lbProxima">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imagem/seta24.png"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="lbProxima">
+            <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/imagem/seta24.png"/>
+                  <Image iconType="3" name="/imagem/seta25.png"/>
                 </Property>
               </Properties>
             </Component>

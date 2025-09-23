@@ -36,8 +36,8 @@ public class FrCarrinho extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lbVoltar = new javax.swing.JLabel();
-        lbRetornar = new javax.swing.JLabel();
         lbProxima = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -106,9 +106,9 @@ public class FrCarrinho extends javax.swing.JFrame {
             }
         });
 
-        lbRetornar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/seta24.png"))); // NOI18N
-
         lbProxima.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/seta24.png"))); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/seta25.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -118,7 +118,7 @@ public class FrCarrinho extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(lbVoltar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 457, Short.MAX_VALUE)
-                .addComponent(lbRetornar)
+                .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(lbProxima)
                 .addGap(25, 25, 25))
@@ -131,7 +131,7 @@ public class FrCarrinho extends javax.swing.JFrame {
                     .addComponent(lbProxima)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lbVoltar)
-                        .addComponent(lbRetornar)))
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -285,18 +285,18 @@ public class FrCarrinho extends javax.swing.JFrame {
         frpagamento.setVisible(true);
     }//GEN-LAST:event_btnExecutarCompraMouseClicked
 
-    public void consultarProdutosCarrinho(){
-    ProdutoController controller = new ProdutoController();
-    
-    Produto produto = new Produto();
+    public void consultarProdutosCarrinho() {
+        ProdutoController controller = new ProdutoController();
+        frComputadores frcomputadores = new frComputadores();
 
+        Produto produto = new Produto();
+        
         lbNome1.setText(produto.getNome());
         produto.getEstoque();
         lbPreco1.setText("R$" + String.valueOf(produto.getPreco()));
         lbFoto1.setIcon(produto.getImagem());
-        
+
     }
-    
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -336,6 +336,7 @@ public class FrCarrinho extends javax.swing.JFrame {
     private javax.swing.JButton btnRemover2;
     private javax.swing.JButton btnRemover3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
@@ -354,7 +355,6 @@ public class FrCarrinho extends javax.swing.JFrame {
     private javax.swing.JLabel lbPreco2;
     private javax.swing.JLabel lbPreco3;
     private javax.swing.JLabel lbProxima;
-    private javax.swing.JLabel lbRetornar;
     private javax.swing.JLabel lbValorTotal;
     private javax.swing.JLabel lbVoltar;
     private javax.swing.JPanel pnlPrincipal;

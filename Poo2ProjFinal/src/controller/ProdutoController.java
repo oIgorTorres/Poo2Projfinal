@@ -109,5 +109,14 @@ public class ProdutoController {
         return lista;
 
     }
+    
+    public List<Produto> filtro(int opcaoFiltro, String filtro) {
+        String sql = "SELECT * from Produto where nome = '?' ";
+
+        
+        GerenciarConexoes gerenciar = new GerenciarConexoes();
+        
+        
+    }
 
 }

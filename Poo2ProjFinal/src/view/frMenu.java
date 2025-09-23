@@ -217,7 +217,9 @@ public class frMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_lbCarrinhoMouseClicked
 
     private void lbHardwareMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbHardwareMouseClicked
-       
+       frComputadores frcomputador = new frComputadores();
+       dispose();
+       frcomputador.setVisible(true);
     }//GEN-LAST:event_lbHardwareMouseClicked
 
   

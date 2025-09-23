@@ -6,6 +6,7 @@
 package view;
 
 import controller.ProdutoController;
+import controller.VendaController;
 import java.util.List;
 import model.Produto;
 
@@ -37,7 +38,7 @@ public class frComputadores extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         lbCarrinho = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        filtro = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         pnlProd2 = new javax.swing.JPanel();
@@ -118,7 +119,7 @@ public class frComputadores extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Voltar");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        filtro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hd", "Ssd", "Memória", "Processador", "Fonte" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -129,8 +130,8 @@ public class frComputadores extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(251, 251, 251)
                 .addComponent(lbCarrinho)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
         jPanel3Layout.setVerticalGroup(
@@ -140,7 +141,7 @@ public class frComputadores extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbCarrinho)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(7, Short.MAX_VALUE))
         );
 
@@ -312,6 +313,11 @@ public class frComputadores extends javax.swing.JFrame {
 
         btnComprar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/shop.png"))); // NOI18N
         btnComprar1.setText("Comprar");
+        btnComprar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnComprar1MouseClicked(evt);
+            }
+        });
 
         lbPreco1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lbPreco1.setForeground(new java.awt.Color(0, 0, 0));
@@ -430,6 +436,13 @@ public class frComputadores extends javax.swing.JFrame {
         buscarProdutos(pagina);
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnComprar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprar1MouseClicked
+        VendaController vendaController = new VendaController();
+        
+
+
+    }//GEN-LAST:event_btnComprar1MouseClicked
+
     public void navegacaoPaginas() {
         lbPagina.setText("Página " + pagina);
     }
@@ -528,7 +541,7 @@ public class frComputadores extends javax.swing.JFrame {
     private javax.swing.JButton btnComprar3;
     private javax.swing.JButton btnProxima;
     private javax.swing.JButton btnRetornar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> filtro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel26;
