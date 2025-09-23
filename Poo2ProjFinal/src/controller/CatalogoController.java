@@ -37,7 +37,7 @@ public class CatalogoController {
     }
     
      public boolean itemCatalogo(ItemCatalogo usu) {
-        String sql = "INSERT INTO CATALOGO (FkidProduto, FkidCatalogo)"
+        String sql = "INSERT INTO ITEMCATALOGO (FkidProduto, FkidCatalogo)"
                 + "Values (?, ?)";
 
         GerenciarConexoes gerenciador = new GerenciarConexoes();
