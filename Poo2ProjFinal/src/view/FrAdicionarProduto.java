@@ -119,16 +119,16 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(imgFoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+            .addComponent(imgFoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLayout.createSequentialGroup()
-                .addComponent(imgFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
+                .addComponent(imgFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel1.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 152, 90, -1));
+        jPanel1.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 188, -1));
 
         btnVincularImagem.setText("Vincular imagem");
         btnVincularImagem.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -141,7 +141,7 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
                 btnVincularImagemActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVincularImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 185, -1, -1));
+        jPanel1.add(btnVincularImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, -1, -1));
 
         edtNomeProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,7 +243,7 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
             Icon icone = Utils.converterFileToIcon(arquivo);
 
             //redimensiono a imagem para caber no imgFoto
-            Icon iconeNovo = Utils.redimensionarImagem(icone, 110, 100);
+            Icon iconeNovo = Utils.redimensionarImagem(icone, 188, 122);
 
             imgFoto.setIcon(iconeNovo);
         }

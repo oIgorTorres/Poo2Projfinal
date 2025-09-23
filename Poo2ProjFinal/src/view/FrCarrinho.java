@@ -32,11 +32,15 @@ public class FrCarrinho extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lbVoltar = new javax.swing.JLabel();
+        lbProxima = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -88,6 +92,15 @@ public class FrCarrinho extends javax.swing.JFrame {
             }
         });
 
+        lbProxima.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbProxima.setForeground(new java.awt.Color(255, 255, 255));
+        lbProxima.setText("Próxima página");
+        lbProxima.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbProximaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -95,13 +108,17 @@ public class FrCarrinho extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(lbVoltar)
-                .addContainerGap(548, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 394, Short.MAX_VALUE)
+                .addComponent(lbProxima)
+                .addGap(18, 18, 18))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbVoltar)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbVoltar)
+                    .addComponent(lbProxima))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -118,16 +135,16 @@ public class FrCarrinho extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(523, Short.MAX_VALUE)
+                .addContainerGap(548, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addGap(45, 45, 45))
+                .addGap(20, 20, 20))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap())
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pnlPrincipal.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 670, 620, 40));
@@ -136,55 +153,55 @@ public class FrCarrinho extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
-        pnlPrincipal.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
+        pnlPrincipal.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
-        pnlPrincipal.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
+        pnlPrincipal.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
-        pnlPrincipal.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, -1, -1));
+        pnlPrincipal.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("R$ ----");
-        pnlPrincipal.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, -1, -1));
+        pnlPrincipal.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("R$ ----");
-        pnlPrincipal.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, -1, -1));
+        pnlPrincipal.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("R$ ----");
-        pnlPrincipal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, -1, -1));
+        pnlPrincipal.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
@@ -192,16 +209,16 @@ public class FrCarrinho extends javax.swing.JFrame {
         pnlPrincipal.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 640, -1, -1));
 
         jButton1.setText("Executar Compra");
-        pnlPrincipal.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 630, -1, -1));
+        pnlPrincipal.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 630, -1, -1));
 
         jButton2.setText("Remover");
-        pnlPrincipal.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, -1));
+        pnlPrincipal.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, -1, -1));
 
         jButton3.setText("Remover");
-        pnlPrincipal.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, -1, -1));
+        pnlPrincipal.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, -1, -1));
 
         jButton4.setText("Remover");
-        pnlPrincipal.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 520, -1, -1));
+        pnlPrincipal.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -227,6 +244,10 @@ public class FrCarrinho extends javax.swing.JFrame {
         dispose();
         frmenu.setVisible(true);
     }//GEN-LAST:event_lbVoltarMouseClicked
+
+    private void lbProximaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbProximaMouseClicked
+        
+    }//GEN-LAST:event_lbProximaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -270,17 +291,21 @@ public class FrCarrinho extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel lbProxima;
     private javax.swing.JLabel lbVoltar;
     private javax.swing.JPanel pnlPrincipal;
     // End of variables declaration//GEN-END:variables

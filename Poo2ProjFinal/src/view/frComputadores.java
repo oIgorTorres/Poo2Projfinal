@@ -283,7 +283,7 @@ public class frComputadores extends javax.swing.JFrame {
             pnlProd3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlProd3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12)
                 .addComponent(lbPreco3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -293,6 +293,8 @@ public class frComputadores extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel11.getAccessibleContext().setAccessibleDescription("");
+
         jPanel1.add(pnlProd3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 190, 200, 270));
 
         pnlProd1.setBackground(new java.awt.Color(255, 255, 255));
@@ -301,11 +303,11 @@ public class frComputadores extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbProduto1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lbProduto1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbProduto1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+            .addComponent(lbProduto1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         btnComprar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/shop.png"))); // NOI18N
@@ -363,7 +365,7 @@ public class frComputadores extends javax.swing.JFrame {
                 btnProximaMouseClicked(evt);
             }
         });
-        jPanel1.add(btnProxima, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 500, -1, -1));
+        jPanel1.add(btnProxima, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 500, -1, -1));
 
         lbPagina.setForeground(new java.awt.Color(0, 0, 0));
         lbPagina.setText("Página 1");
