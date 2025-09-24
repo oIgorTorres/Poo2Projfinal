@@ -65,7 +65,22 @@ public class VendaController {
         return false;
     }
 
-   
+    
+    public boolean consultar(Produto usu) {
+        String sql = "SELECT * FROM itemvenda where FkidVenda ";
+
+        GerenciarConexoes gerenciador = new GerenciarConexoes();
+
+        PreparedStatement comando = null;
+        ResultSet resultado = null;
+
+        try {
+            comando = gerenciador.prepararComando(sql);
+
+            comando.setString(1, );
+            comando.setString(2, );
+        }
+    }
     
 
 

@@ -77,7 +77,7 @@ public class frComputadores extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Tela computadores");
+        jLabel1.setText("Tela Produtos");
 
         jTextField1.setText("Pesquisar");
 
@@ -86,9 +86,9 @@ public class frComputadores extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(268, Short.MAX_VALUE)
+                .addContainerGap(303, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(44, 44, 44)
+                .addGap(68, 68, 68)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -119,7 +119,7 @@ public class frComputadores extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Voltar");
 
-        cbxfiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hd", "Ssd", "Memória", "Processador", "Fonte" }));
+        cbxfiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hd", "Ssd", "Memória", "Processador", "Fonte", "Placa mãe" }));
         cbxfiltro.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbxfiltroItemStateChanged(evt);
