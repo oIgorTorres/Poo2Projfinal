@@ -100,9 +100,9 @@ public class FrSobre extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
-                .addGap(22, 22, 22)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel3)
-                .addGap(50, 50, 50)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel4)
                 .addContainerGap(100, Short.MAX_VALUE))
         );
@@ -112,10 +112,9 @@ public class FrSobre extends javax.swing.JFrame {
                 .addContainerGap(7, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel3)))
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3))
                 .addContainerGap())
         );
 
