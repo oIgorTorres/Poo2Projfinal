@@ -6,6 +6,7 @@
 package view;
 
 import controller.ProdutoController;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import model.Produto;
@@ -39,13 +40,14 @@ public class FrCatalogo extends javax.swing.JFrame {
         ProdutoController controller = new ProdutoController();
 
         //passar os filtros pro método consultar
-        List<Produto> listaProduto = controller.consultar(HEIGHT);
+        List<Produto> listaProduto = controller.consultarCatalogo();
 
         //prencher a grade
         for (Produto usu : listaProduto) {
             Object[] linha = {
                 usu.getNome(),
-                usu.getPreco()
+                usu.getPreco(),
+                false
 
             };
 
@@ -96,6 +98,11 @@ public class FrCatalogo extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(234, 234, 234));
 
@@ -212,17 +219,34 @@ public class FrCatalogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-          if(tblCatalogo.getSelectedRow() == -1){
-            return;//encerro a função
+        List<Produto> listaSelecionados = new ArrayList<>();
+
+        //percorro todas as linhas da grade
+        for (int index = 0; index < tblCatalogo.getRowCount(); index++) {
+            //pego o texto da coluna "Selecionado"
+            String celula = tblCatalogo.getValueAt(index, 2).toString();
+
+            //converto o texto da célula em boolean
+            boolean selecionado = Boolean.parseBoolean(celula);
+
+            //Se está selecionado adiciono na lista
+            if (selecionado) {
+                //Pego o conteúdo da coluna "Nome" que contém o Usuario inteiro
+                //A grade só sabe que o tipo de dado é Object que é uma
+                //classe genérica, pode ser qualquer coisa
+                Object objeto = tblCatalogo.getValueAt(index, 1);
+
+                //para adicionar o objeto na lista forço o programa a ler 
+                //a variável objeto como sendo do tipo Usuario atráves da expressão
+                //(Usuario) objeto
+                listaSelecionados.add((Produto) objeto);
+            }
         }
-        
-        //pego o valor de célula na grade, na coluna 0 (código)
-        int posicaoLinha = tblCatalogo.getSelectedRow();
-        
-        //pegar o valor da célula na grade, na coluna 0(código)
-        String celula = tblCatalogo.getValueAt(posicaoLinha, 0).toString();
-        
     }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        pesquisar();
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments

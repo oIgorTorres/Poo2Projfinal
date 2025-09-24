@@ -110,13 +110,67 @@ public class ProdutoController {
 
     }
     
-    public List<Produto> filtro(int opcaoFiltro, String filtro) {
+    /*public List<Produto> filtro(int opcaoFiltro, String filtro) {
         String sql = "SELECT * from Produto where nome = '?' ";
 
         
         GerenciarConexoes gerenciar = new GerenciarConexoes();
         
         
-    }
+    }*/
+    
+    
+        public List<Produto> consultarCatalogo() {
+        //Montar o comando a ser executado
+        //os ? são variáveis que são preenchidas mais adiante
+        String sql = "SELECT * from Produto ";
+    
 
+        //Cria uma instância do gerenciador de conexão
+        //(conexão com o banco de dados,
+        GerenciarConexoes gerenciador = new GerenciarConexoes();
+
+        //Declara as variáveis como nulas antes do try
+        //para poder usar o finally
+        PreparedStatement comando = null;
+        ResultSet resultado = null;
+
+        //Crio a list de usuários, vazia ainda
+        List<Produto> lista = new ArrayList<>();
+
+        try {
+            //prepara o sql, analisando o formato e as variáveis
+            comando = gerenciador.prepararComando(sql);
+            
+
+            //executa o comando e guarda o resultado da consulta
+            //o resultado é semelhante a uma grade
+            resultado = comando.executeQuery();
+
+            while (resultado.next()) {
+                Produto produto = new Produto();
+
+                produto.setIdProduto(resultado.getInt("idProduto"));
+                produto.setNome(resultado.getString("nome"));
+                produto.setEstoque(resultado.getInt("estoque"));
+                produto.setPreco(resultado.getDouble("preco"));
+
+
+                lista.add(produto);
+
+            }
+
+        } catch (SQLException e) {
+            //caso ocorra um erro relacionado ao banco de dados
+            //exibe popup com o erro
+
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            //depois de executar o try, dando erro ou não executa o finally
+            gerenciador.fecharConexao(comando, resultado);
+        }
+        return lista;
+
+    }
+    
 }
