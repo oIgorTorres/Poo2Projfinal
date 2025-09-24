@@ -119,7 +119,7 @@ public class frComputadores extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Voltar");
 
-        cbxfiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hd", "Ssd", "Memória", "Processador", "Fonte", "Placa mãe" }));
+        cbxfiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Desativado", "Hd", "Ssd", "Memória", "Processador", "Fonte", "Placa mãe", "Placa de vídeo" }));
         cbxfiltro.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbxfiltroItemStateChanged(evt);
@@ -140,7 +140,7 @@ public class frComputadores extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(251, 251, 251)
                 .addComponent(lbCarrinho)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
                 .addComponent(cbxfiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
