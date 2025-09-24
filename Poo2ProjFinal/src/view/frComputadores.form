@@ -123,7 +123,7 @@
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="251" max="-2" attributes="0"/>
                       <Component id="lbCarrinho" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="196" max="32767" attributes="0"/>
+                      <EmptySpace pref="188" max="32767" attributes="0"/>
                       <Component id="cbxfiltro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
@@ -172,13 +172,15 @@
             <Component class="javax.swing.JComboBox" name="cbxfiltro">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="6">
-                    <StringItem index="0" value="Hd"/>
-                    <StringItem index="1" value="Ssd"/>
-                    <StringItem index="2" value="Mem&#xf3;ria"/>
-                    <StringItem index="3" value="Processador"/>
-                    <StringItem index="4" value="Fonte"/>
-                    <StringItem index="5" value="Placa m&#xe3;e"/>
+                  <StringArray count="8">
+                    <StringItem index="0" value="Desativado"/>
+                    <StringItem index="1" value="Hd"/>
+                    <StringItem index="2" value="Ssd"/>
+                    <StringItem index="3" value="Mem&#xf3;ria"/>
+                    <StringItem index="4" value="Processador"/>
+                    <StringItem index="5" value="Fonte"/>
+                    <StringItem index="6" value="Placa m&#xe3;e"/>
+                    <StringItem index="7" value="Placa de v&#xed;deo"/>
                   </StringArray>
                 </Property>
               </Properties>

@@ -54,6 +54,7 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -130,6 +131,7 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
 
         jPanel1.add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 188, -1));
 
+        btnVincularImagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/image.png"))); // NOI18N
         btnVincularImagem.setText("Vincular imagem");
         btnVincularImagem.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -141,7 +143,7 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
                 btnVincularImagemActionPerformed(evt);
             }
         });
-        jPanel1.add(btnVincularImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, -1, -1));
+        jPanel1.add(btnVincularImagem, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
 
         edtNomeProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,6 +206,9 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Estoque");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 342, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/pintinho2.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -355,6 +360,7 @@ public class FrAdicionarProduto extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
