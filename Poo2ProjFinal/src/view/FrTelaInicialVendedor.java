@@ -5,6 +5,14 @@
  */
 package view;
 
+import controller.CatalogoController;
+import controller.ProdutoController;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import model.Catalogo;
+import model.ItemCatalogo;
+import model.Produto;
+
 /**
  *
  * @author aluno.saolucas
@@ -17,7 +25,28 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
     public FrTelaInicialVendedor() {
         initComponents();
     }
+     private void pesquisar() {
+    
+        DefaultTableModel modeloTabela = (DefaultTableModel) tblCatalogos.getModel();
+        modeloTabela.setNumRows(0);
 
+        
+         CatalogoController controller = new CatalogoController();
+
+        List<ItemCatalogo> listaCatalogo = controller.itemCatalogo(usu);
+
+        for (ItemCatalogo usu : listaCatalogo) {
+            Object[] linha = {
+                usu.getFkIdCatalogo(),
+                usu.getFkIdProduto(),
+                false
+
+            };
+
+            modeloTabela.addRow(linha);
+        }
+     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,20 +59,22 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lbProdutos = new javax.swing.JLabel();
+        lbLogout = new javax.swing.JLabel();
+        lbCatalogo = new javax.swing.JLabel();
+        lbCatalogoVisu = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCatalogos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(234, 234, 234));
         jPanel1.setForeground(new java.awt.Color(229, 229, 229));
@@ -54,7 +85,7 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Tela inicial");
+        jLabel1.setText("Tela inicial - Vendedor");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -74,66 +105,6 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 90));
-
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
-
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
-
-        jPanel6.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, -1, -1));
-
-        jPanel7.setBackground(new java.awt.Color(204, 204, 204));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 450, -1, -1));
 
         jPanel8.setBackground(new java.awt.Color(35, 69, 108));
 
@@ -156,72 +127,105 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 624, 544, 30));
-
-        jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Adicionados recentemente");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 580, 30));
 
         jPanel3.setBackground(new java.awt.Color(35, 69, 108));
 
-        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Adicionar produtos");
+        lbProdutos.setBackground(new java.awt.Color(204, 204, 204));
+        lbProdutos.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbProdutos.setForeground(new java.awt.Color(255, 255, 255));
+        lbProdutos.setText("Adicionar produtos");
+        lbProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbProdutosMouseClicked(evt);
+            }
+        });
 
-        jLabel4.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Logout");
+        lbLogout.setBackground(new java.awt.Color(204, 204, 204));
+        lbLogout.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbLogout.setForeground(new java.awt.Color(255, 255, 255));
+        lbLogout.setText("Logout");
+        lbLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbLogoutMouseClicked(evt);
+            }
+        });
 
-        jLabel5.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Histórico de produtos");
+        lbCatalogo.setBackground(new java.awt.Color(204, 204, 204));
+        lbCatalogo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbCatalogo.setForeground(new java.awt.Color(255, 255, 255));
+        lbCatalogo.setText("Vincular catálogos");
+        lbCatalogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbCatalogoMouseClicked(evt);
+            }
+        });
 
-        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Vincular catálogos");
+        lbCatalogoVisu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lbCatalogoVisu.setForeground(new java.awt.Color(255, 255, 255));
+        lbCatalogoVisu.setText("Catálogos");
+        lbCatalogoVisu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbCatalogoVisuMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(108, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(42, 42, 42)
-                .addComponent(jLabel6)
-                .addGap(40, 40, 40)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18))
+                .addContainerGap(119, Short.MAX_VALUE)
+                .addComponent(lbCatalogo)
+                .addGap(44, 44, 44)
+                .addComponent(lbCatalogoVisu)
+                .addGap(55, 55, 55)
+                .addComponent(lbProdutos)
+                .addGap(81, 81, 81))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(16, 16, 16)
-                    .addComponent(jLabel4)
-                    .addContainerGap(489, Short.MAX_VALUE)))
+                    .addComponent(lbLogout)
+                    .addContainerGap(567, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2))
+                    .addComponent(lbCatalogo, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(lbProdutos)
+                    .addComponent(lbCatalogoVisu))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 40));
 
+        tblCatalogos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Catalogos"
+            }
+        ));
+        jScrollPane1.setViewportView(tblCatalogos);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, -1, 90));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,6 +234,34 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lbCatalogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCatalogoMouseClicked
+        FrVincularCatalogos frcatalogo = new FrVincularCatalogos(null, rootPaneCheckingEnabled);
+        dispose();
+        frcatalogo.setVisible(true);
+    }//GEN-LAST:event_lbCatalogoMouseClicked
+
+    private void lbProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbProdutosMouseClicked
+        FrAdicionarProduto frproduto = new FrAdicionarProduto(null, rootPaneCheckingEnabled);
+        dispose();
+        frproduto.setVisible(true);
+    }//GEN-LAST:event_lbProdutosMouseClicked
+
+    private void lbLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbLogoutMouseClicked
+        frLogin frlogin = new frLogin();
+        dispose();
+        frlogin.setVisible(true);
+    }//GEN-LAST:event_lbLogoutMouseClicked
+
+    private void lbCatalogoVisuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbCatalogoVisuMouseClicked
+        FrCatalogo frcatalogo = new FrCatalogo();
+        dispose();
+        frcatalogo.setVisible(true);
+    }//GEN-LAST:event_lbCatalogoVisuMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+       
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -269,19 +301,16 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbCatalogo;
+    private javax.swing.JLabel lbCatalogoVisu;
+    private javax.swing.JLabel lbLogout;
+    private javax.swing.JLabel lbProdutos;
+    private javax.swing.JTable tblCatalogos;
     // End of variables declaration//GEN-END:variables
 }

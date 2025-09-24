@@ -46,11 +46,15 @@ public class ProdutoController {
         return false;
     }
 
-    public List<Produto> consultar(int offset) {
+    public List<Produto> consultar(int offset, String filtro) {
         //Montar o comando a ser executado
         //os ? são variáveis que são preenchidas mais adiante
-        String sql = "SELECT * from Produto limit 3 offset ? ";
-    
+        String sql = "SELECT * from Produto ";
+
+        if (filtro != null) {
+            sql = sql + "where nome like '%" + filtro + "%'";
+        }
+        sql = sql + "limit 3 offset ? ";
 
         //Cria uma instância do gerenciador de conexão
         //(conexão com o banco de dados,
@@ -67,7 +71,7 @@ public class ProdutoController {
         try {
             //prepara o sql, analisando o formato e as variáveis
             comando = gerenciador.prepararComando(sql);
-            
+
             comando.setInt(1, offset);
 
             //executa o comando e guarda o resultado da consulta

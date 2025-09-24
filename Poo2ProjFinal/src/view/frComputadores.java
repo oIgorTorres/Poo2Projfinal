@@ -38,7 +38,7 @@ public class frComputadores extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         lbCarrinho = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        filtro = new javax.swing.JComboBox<>();
+        cbxfiltro = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
         pnlProd2 = new javax.swing.JPanel();
@@ -77,7 +77,7 @@ public class frComputadores extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Tela computadores");
+        jLabel1.setText("Tela Produtos");
 
         jTextField1.setText("Pesquisar");
 
@@ -86,9 +86,9 @@ public class frComputadores extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(268, Short.MAX_VALUE)
+                .addContainerGap(303, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(44, 44, 44)
+                .addGap(68, 68, 68)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -119,7 +119,17 @@ public class frComputadores extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Voltar");
 
-        filtro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hd", "Ssd", "Memória", "Processador", "Fonte" }));
+        cbxfiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hd", "Ssd", "Memória", "Processador", "Fonte", "Placa mãe" }));
+        cbxfiltro.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxfiltroItemStateChanged(evt);
+            }
+        });
+        cbxfiltro.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                cbxfiltroPropertyChange(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -131,7 +141,7 @@ public class frComputadores extends javax.swing.JFrame {
                 .addGap(251, 251, 251)
                 .addComponent(lbCarrinho)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
-                .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbxfiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
         jPanel3Layout.setVerticalGroup(
@@ -141,7 +151,7 @@ public class frComputadores extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbCarrinho)
                     .addComponent(jLabel2)
-                    .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxfiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(7, Short.MAX_VALUE))
         );
 
@@ -451,6 +461,13 @@ public class frComputadores extends javax.swing.JFrame {
     private void btnProximaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProximaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnProximaActionPerformed
+    private void cbxfiltroPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cbxfiltroPropertyChange
+        
+    }//GEN-LAST:event_cbxfiltroPropertyChange
+
+    private void cbxfiltroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxfiltroItemStateChanged
+        buscarProdutos(pagina);
+    }//GEN-LAST:event_cbxfiltroItemStateChanged
 
     public void navegacaoPaginas() {
         lbPagina.setText("Página " + pagina);
@@ -462,7 +479,7 @@ public class frComputadores extends javax.swing.JFrame {
 
         ProdutoController controller = new ProdutoController();
 
-        List<Produto> lista = controller.consultar(offset);
+        List<Produto> lista = controller.consultar(offset, cbxfiltro.getItemAt(cbxfiltro.getSelectedIndex()));
 
         Produto produto;
 
@@ -550,7 +567,7 @@ public class frComputadores extends javax.swing.JFrame {
     private javax.swing.JButton btnComprar3;
     private javax.swing.JButton btnProxima;
     private javax.swing.JButton btnRetornar;
-    private javax.swing.JComboBox<String> filtro;
+    private javax.swing.JComboBox<String> cbxfiltro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel26;

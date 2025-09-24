@@ -61,6 +61,11 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Voltar");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -196,6 +201,11 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
     private void btnAdicionarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarCatalogoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAdicionarCatalogoActionPerformed
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        FrTelaInicialVendedor frvendedor = new FrTelaInicialVendedor();
+        dispose();
+        frvendedor.setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     private boolean verificarCampos() {
         if (edtNomeCatalogo.getText().isEmpty()) {
