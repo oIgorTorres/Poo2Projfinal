@@ -158,6 +158,11 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
                 btnAdicionarCatalogoMouseClicked(evt);
             }
         });
+        btnAdicionarCatalogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarCatalogoActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAdicionarCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, -1, -1));
         jPanel1.add(edtDataCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 110, 20));
 
@@ -187,6 +192,10 @@ public class FrVincularCatalogos extends javax.swing.JDialog {
         edtNomeCatalogo.setText("");
         edtDataCatalogo.setText("");
     }//GEN-LAST:event_btnLimparMouseClicked
+
+    private void btnAdicionarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarCatalogoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdicionarCatalogoActionPerformed
 
     private boolean verificarCampos() {
         if (edtNomeCatalogo.getText().isEmpty()) {

@@ -5,10 +5,12 @@
  */
 package view;
 
+import controller.CatalogoController;
 import controller.ProdutoController;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import model.ItemCatalogo;
 import model.Produto;
 
 /**
@@ -197,11 +199,11 @@ public class FrCatalogo extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(51, 51, 51)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
                 .addComponent(btnConfirmar)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -219,27 +221,30 @@ public class FrCatalogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        List<Produto> listaSelecionados = new ArrayList<>();
+        
 
         //percorro todas as linhas da grade
         for (int index = 0; index < tblCatalogo.getRowCount(); index++) {
-            //pego o texto da coluna "Selecionado"
+           
             String celula = tblCatalogo.getValueAt(index, 2).toString();
 
-            //converto o texto da célula em boolean
             boolean selecionado = Boolean.parseBoolean(celula);
 
-            //Se está selecionado adiciono na lista
-            if (selecionado) {
-                //Pego o conteúdo da coluna "Nome" que contém o Usuario inteiro
-                //A grade só sabe que o tipo de dado é Object que é uma
-                //classe genérica, pode ser qualquer coisa
-                Object objeto = tblCatalogo.getValueAt(index, 1);
-
-                //para adicionar o objeto na lista forço o programa a ler 
-                //a variável objeto como sendo do tipo Usuario atráves da expressão
-                //(Usuario) objeto
-                listaSelecionados.add((Produto) objeto);
+            if (selecionado) {        
+                Object objeto = tblCatalogo.getValueAt(index, 1);  
+                Produto produto = (Produto) objeto;
+                
+                CatalogoController catalogo = new CatalogoController();
+                
+                ItemCatalogo usu = new ItemCatalogo();
+                usu.setFkIdProduto(produto.getIdProduto());
+                //usu.setFkIdCatalogo();
+                
+                
+                catalogo.itemCatalogo(usu);
+                
+                
+                
             }
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed

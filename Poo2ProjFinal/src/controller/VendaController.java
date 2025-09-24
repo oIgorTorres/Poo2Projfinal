@@ -70,11 +70,6 @@ public class VendaController {
     }
       
       
-        public boolean consultar(Produto usu) {
-      String sql = "SELECT * FROM vendas ";
-     
-              
-              
               
               
 }
