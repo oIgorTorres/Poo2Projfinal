@@ -35,9 +35,10 @@ public class frComputadores extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lbCarrinho = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lbVoltar = new javax.swing.JLabel();
         cbxfiltro = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -81,25 +82,34 @@ public class frComputadores extends javax.swing.JFrame {
 
         jTextField1.setText("Pesquisar");
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/pintinho.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(303, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(68, 68, 68)
+                .addGap(65, 65, 65)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 100));
@@ -115,9 +125,14 @@ public class frComputadores extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Voltar");
+        lbVoltar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lbVoltar.setForeground(new java.awt.Color(255, 255, 255));
+        lbVoltar.setText("Voltar");
+        lbVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbVoltarMouseClicked(evt);
+            }
+        });
 
         cbxfiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Desativado", "Hd", "Ssd", "Memória", "Processador", "Fonte", "Placa mãe", "Placa de vídeo" }));
         cbxfiltro.addItemListener(new java.awt.event.ItemListener() {
@@ -137,7 +152,7 @@ public class frComputadores extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel2)
+                .addComponent(lbVoltar)
                 .addGap(251, 251, 251)
                 .addComponent(lbCarrinho)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 188, Short.MAX_VALUE)
@@ -150,7 +165,7 @@ public class frComputadores extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbCarrinho)
-                    .addComponent(jLabel2)
+                    .addComponent(lbVoltar)
                     .addComponent(cbxfiltro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(7, Short.MAX_VALUE))
         );
@@ -461,6 +476,12 @@ public class frComputadores extends javax.swing.JFrame {
         buscarProdutos(pagina);
     }//GEN-LAST:event_cbxfiltroItemStateChanged
 
+    private void lbVoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbVoltarMouseClicked
+        frMenu frmenu = new frMenu();
+        dispose();
+        frmenu.setVisible(true);
+    }//GEN-LAST:event_lbVoltarMouseClicked
+
     public void navegacaoPaginas() {
         lbPagina.setText("Página " + pagina);
     }
@@ -561,8 +582,8 @@ public class frComputadores extends javax.swing.JFrame {
     private javax.swing.JButton btnRetornar;
     private javax.swing.JComboBox<String> cbxfiltro;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
@@ -582,6 +603,7 @@ public class frComputadores extends javax.swing.JFrame {
     private javax.swing.JLabel lbProduto1;
     private javax.swing.JLabel lbProduto2;
     private javax.swing.JLabel lbProduto3;
+    private javax.swing.JLabel lbVoltar;
     private javax.swing.JPanel pnlProd1;
     private javax.swing.JPanel pnlProd2;
     private javax.swing.JPanel pnlProd3;
