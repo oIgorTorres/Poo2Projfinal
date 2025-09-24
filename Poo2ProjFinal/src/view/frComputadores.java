@@ -396,6 +396,11 @@ public class frComputadores extends javax.swing.JFrame {
                 btnProximaMouseClicked(evt);
             }
         });
+        btnProxima.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProximaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnProxima, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 500, -1, -1));
 
         lbPagina.setForeground(new java.awt.Color(0, 0, 0));
@@ -468,6 +473,9 @@ public class frComputadores extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnComprar1MouseClicked
 
+    private void btnProximaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProximaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProximaActionPerformed
     private void cbxfiltroPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cbxfiltroPropertyChange
         
     }//GEN-LAST:event_cbxfiltroPropertyChange

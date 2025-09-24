@@ -5,6 +5,14 @@
  */
 package view;
 
+import controller.CatalogoController;
+import controller.ProdutoController;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import model.Catalogo;
+import model.ItemCatalogo;
+import model.Produto;
+
 /**
  *
  * @author aluno.saolucas
@@ -17,7 +25,28 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
     public FrTelaInicialVendedor() {
         initComponents();
     }
+     private void pesquisar() {
+    
+        DefaultTableModel modeloTabela = (DefaultTableModel) tblCatalogos.getModel();
+        modeloTabela.setNumRows(0);
 
+        
+         CatalogoController controller = new CatalogoController();
+
+        List<ItemCatalogo> listaCatalogo = controller.();
+
+        for (ItemCatalogo usu : listaCatalogo) {
+            Object[] linha = {
+                usu.getFkIdCatalogo(),
+                usu.getFkIdProduto(),
+                false
+
+            };
+
+            modeloTabela.addRow(linha);
+        }
+     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,8 +66,15 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
         lbLogout = new javax.swing.JLabel();
         lbCatalogo = new javax.swing.JLabel();
         lbCatalogoVisu = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCatalogos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(234, 234, 234));
         jPanel1.setForeground(new java.awt.Color(229, 229, 229));
@@ -91,7 +127,7 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 624, 580, 30));
+        jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 580, 30));
 
         jPanel3.setBackground(new java.awt.Color(35, 69, 108));
 
@@ -170,6 +206,21 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 40));
 
+        tblCatalogos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Catalogos"
+            }
+        ));
+        jScrollPane1.setViewportView(tblCatalogos);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, -1, 90));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -207,6 +258,10 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
         dispose();
         frcatalogo.setVisible(true);
     }//GEN-LAST:event_lbCatalogoVisuMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+       
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -251,9 +306,11 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbCatalogo;
     private javax.swing.JLabel lbCatalogoVisu;
     private javax.swing.JLabel lbLogout;
     private javax.swing.JLabel lbProdutos;
+    private javax.swing.JTable tblCatalogos;
     // End of variables declaration//GEN-END:variables
 }

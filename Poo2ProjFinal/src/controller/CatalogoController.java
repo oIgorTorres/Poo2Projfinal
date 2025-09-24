@@ -4,6 +4,7 @@ package controller;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import javax.swing.JOptionPane;
 import model.Catalogo;
 import model.ItemCatalogo;
@@ -61,4 +62,18 @@ public class CatalogoController {
         }
         return false;
     }
+     
+     public List<ItemCatalogo> consultar(int offset){
+     String sql = "Select * from itemCatalogo";
+     
+     List<ItemCatalogo> lista = new ArrayList<>();
+     
+     ItemCatalogo itemCatalogo = new ItemCatalogo();
+     
+     itemCatalogo.setFkIdProduto(offset);
+     itemCatalogo.setFkIdCatalogo(offset);
+     
+     return lista;
+     }     
+     
 }

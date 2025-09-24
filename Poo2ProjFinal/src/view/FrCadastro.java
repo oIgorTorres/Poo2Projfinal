@@ -155,6 +155,11 @@ public class FrCadastro extends javax.swing.JDialog {
                 btnCadastrarMouseClicked(evt);
             }
         });
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(41, 89, 134));
@@ -245,6 +250,10 @@ public class FrCadastro extends javax.swing.JDialog {
         dispose();
         frLoginClient.setVisible(true);
     }//GEN-LAST:event_lbJaPossuiUmaContaMouseClicked
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
