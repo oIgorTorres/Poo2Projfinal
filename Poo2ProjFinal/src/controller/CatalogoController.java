@@ -64,17 +64,52 @@ public class CatalogoController {
         return false;
     }
      
-     public List<ItemCatalogo> consultar(int offset){
-     String sql = "Select * from itemCatalogo";
-     
-     List<ItemCatalogo> lista = new ArrayList<>();
-     
-     ItemCatalogo itemCatalogo = new ItemCatalogo();
-     
-     itemCatalogo.setFkIdProduto(offset);
-     itemCatalogo.setFkIdCatalogo(offset);
-     
-     return lista;
+     public List<Catalogo> consultar(){
+    //Montar o comando a ser executado
+        //os ? são variáveis que são preenchidas mais adiante
+        String sql = "SELECT * from Catalogo ";
+
+        
+        GerenciarConexoes gerenciador = new GerenciarConexoes();
+
+        //Declara as variáveis como nulas antes do try
+        //para poder usar o finally
+        PreparedStatement comando = null;
+        ResultSet resultado = null;
+
+        //Crio a list de usuários, vazia ainda
+        List<Catalogo> lista = new ArrayList<>();
+
+        try {
+            //prepara o sql, analisando o formato e as variáveis
+            comando = gerenciador.prepararComando(sql);
+
+            //executa o comando e guarda o resultado da consulta
+            //o resultado é semelhante a uma grade
+            resultado = comando.executeQuery();
+
+            while (resultado.next()) {
+                Catalogo catalogo = new Catalogo();
+                
+                catalogo.setIdCatalogo(resultado.getInt("idCatalogo"));
+                catalogo.setNome(resultado.getString("Nome"));
+                catalogo.setDataValidade(resultado.getDate("dataValidade"));
+
+                lista.add(catalogo);
+
+            }
+
+        } catch (SQLException e) {
+            //caso ocorra um erro relacionado ao banco de dados
+            //exibe popup com o erro
+
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } finally {
+            //depois de executar o try, dando erro ou não executa o finally
+            gerenciador.fecharConexao(comando, resultado);
+        }
+        return lista;
+
      }     
      
 }
