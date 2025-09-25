@@ -68,6 +68,7 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
         lbCatalogoVisu = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCatalogos = new javax.swing.JTable();
+        btnAdicionar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -208,18 +209,46 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
 
         tblCatalogos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Catalogos"
+                "Nome", "Id", "Data de validade"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tblCatalogos);
+        if (tblCatalogos.getColumnModel().getColumnCount() > 0) {
+            tblCatalogos.getColumnModel().getColumn(0).setResizable(false);
+            tblCatalogos.getColumnModel().getColumn(1).setResizable(false);
+            tblCatalogos.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, -1, 90));
+
+        btnAdicionar.setText("adicionar");
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -263,6 +292,21 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
        
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+            
+            int linhaSelecionada;
+            
+            linhaSelecionada = tblCatalogos.getSelectedRow();
+           
+            String celula = tblCatalogos.getValueAt(linhaSelecionada, 0).toString();
+
+            int selecionado = Integer.parseInt(celula);
+
+            FrCatalogo frCatalogo = new FrCatalogo();
+            dispose();
+            frCatalogo.setVisible(true);
+    }//GEN-LAST:event_btnAdicionarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -300,6 +344,7 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdicionar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
