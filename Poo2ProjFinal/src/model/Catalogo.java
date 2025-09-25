@@ -7,7 +7,8 @@ import java.util.Date;
 public class Catalogo {
     private String nome;
     private Date dataValidade;
-
+    private int idCatalogo;
+    
     public String getNome() {
         return nome;
     }
@@ -22,6 +23,14 @@ public class Catalogo {
 
     public void setDataValidade(Date dataValidade) {
         this.dataValidade = dataValidade;
+    }
+
+    public int getIdCatalogo() {
+        return idCatalogo;
+    }
+
+    public void setIdCatalogo(int idCatalogo) {
+        this.idCatalogo = idCatalogo;
     }
     
     

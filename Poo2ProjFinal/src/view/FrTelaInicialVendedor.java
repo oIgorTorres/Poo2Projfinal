@@ -33,13 +33,13 @@ public class FrTelaInicialVendedor extends javax.swing.JFrame {
         
          CatalogoController controller = new CatalogoController();
 
-        List<ItemCatalogo> listaCatalogo = controller.();
+        List<Catalogo> listaCatalogo = controller.consultar();
 
-        for (ItemCatalogo usu : listaCatalogo) {
+        for (Catalogo usu : listaCatalogo) {
             Object[] linha = {
-                usu.getFkIdCatalogo(),
-                usu.getFkIdProduto(),
-                false
+                usu.getIdCatalogo(),
+                usu.getNome(),
+                usu.getDataValidade()
 
             };
 
